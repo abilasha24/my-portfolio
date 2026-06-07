@@ -19,7 +19,7 @@ export default function Home() {
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <div className="animate-fade-in">
             <p className="text-blue-400 dark:text-blue-300 text-sm sm:text-base font-medium tracking-wider uppercase mb-4">
-              Welcome to my portfolio
+             Full Stack Developer Portfolio
             </p>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               Hi, I'm{' '}
@@ -28,10 +28,10 @@ export default function Home() {
               </span>
             </h1>
             <p className="text-xl sm:text-2xl text-slate-300 dark:text-slate-400 mb-4">
-              Junior Software Developer
+              Full Stack Web Developer (React / Node.js)
             </p>
             <p className="text-base sm:text-lg text-slate-400 dark:text-slate-500 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Building practical web applications and exploring AI & modern software development
+              I design and develop full-stack web applications using React, TypeScript, and Node.js, focusing on performance, clean architecture, and real-world deployment.
             </p>
 
             {/* CTA Buttons */}
@@ -71,14 +71,14 @@ export default function Home() {
               >
                 <Linkedin className="w-6 h-6" />
               </a>
-              <a
-                href="/resume.pdf"
-                download
-                className="p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 hover:scale-110"
-                aria-label="Download Resume"
-              >
-                <Download className="w-6 h-6" />
-              </a>
+             <a
+  href="/resume.pdf"
+  download
+  className="p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 hover:scale-110"
+  aria-label="Download Resume"
+>
+  <Download className="w-6 h-6" />
+</a>
             </div>
           </div>
         </div>
@@ -96,10 +96,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { value: '2+', label: 'Projects Completed' },
-              { value: '5+', label: 'Technologies' },
-              { value: '1+', label: 'Years Learning' },
-              { value: '100%', label: 'Dedication' },
+              { value: 'React + Node', label: 'Core Stack' },
+{ value: '3+ Projects', label: 'Completed Work' },
+{ value: 'Intern Ready', label: 'Job Status' },
+{ value: 'Clean Code', label: 'Development Style' },
             ].map((stat, index) => (
               <div
                 key={index}
