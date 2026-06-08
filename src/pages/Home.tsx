@@ -72,7 +72,7 @@ export default function Home() {
                 <Linkedin className="w-6 h-6" />
               </a>
              <a
-  href="/resume.pdf"
+  href="/Abi_Resume.pdf"
   download
   className="p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 hover:scale-110"
   aria-label="Download Resume"
