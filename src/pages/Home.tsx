@@ -4,116 +4,121 @@ import { ArrowRight, Github, Linkedin, Download } from 'lucide-react';
 export default function Home() {
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
+
+      {/* HERO */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950" />
 
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
+        {/* Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900" />
+
+        {/* Glow */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-blue-500/10 blur-3xl rounded-full" />
+          <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-cyan-500/10 blur-3xl rounded-full" />
         </div>
 
-        {/* Content */}
+        {/* CONTENT */}
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <div className="animate-fade-in">
-            <p className="text-blue-400 dark:text-blue-300 text-sm sm:text-base font-medium tracking-wider uppercase mb-4">
-             Full Stack Developer Portfolio
-            </p>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-              Hi, I'm{' '}
-              <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent">
-                Abilasha Selvanayakam
-              </span>
-            </h1>
-            <p className="text-xl sm:text-2xl text-slate-300 dark:text-slate-400 mb-4">
-              Full Stack Web Developer (React / Node.js)
-            </p>
-            <p className="text-base sm:text-lg text-slate-400 dark:text-slate-500 mb-8 max-w-2xl mx-auto leading-relaxed">
-              I design and develop full-stack web applications using React, TypeScript, and Node.js, focusing on performance, clean architecture, and real-world deployment.
-            </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-              <Link
-                to="/projects"
-                className="group inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/30"
-              >
-                View Projects
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-medium rounded-lg border border-white/20 transition-all duration-300 hover:scale-105"
-              >
-                Contact Me
-              </Link>
-            </div>
+          <p className="text-blue-400 text-sm tracking-widest uppercase mb-4">
+            Available for Internship / Junior Developer Roles
+          </p>
 
-            {/* Social Links */}
-            <div className="flex items-center justify-center gap-4">
-              <a
-                href="https://github.com/abilasha24"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 hover:scale-110"
-                aria-label="GitHub"
-              >
-                <Github className="w-6 h-6" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/abilashaselvanayakam2k06"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 hover:scale-110"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-6 h-6" />
-              </a>
-             <a
-  href="/Abilasha_Resume.pdf"
-  download
-  className="p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 hover:scale-110"
-  aria-label="Download Resume"
->
-  <Download className="w-6 h-6" />
-</a>
-            </div>
+          <h1 className="text-4xl sm:text-6xl font-bold text-white mb-6 leading-tight">
+            Hi, I'm{' '}
+            <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+              Abilasha Selvanayakam
+            </span>
+          </h1>
+
+          <p className="text-xl text-slate-300 mb-3">
+            Full Stack Developer (React / PHP / Node.js)
+          </p>
+
+          <p className="text-slate-400 max-w-2xl mx-auto mb-8">
+            I build real-world full-stack applications with authentication systems,
+            database design, and deployed production projects using PHP, MySQL, React, and Python.
+          </p>
+
+          {/* CTA */}
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-10">
+
+            <Link
+              to="/projects"
+              className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg flex items-center justify-center gap-2 transition"
+            >
+              View Projects <ArrowRight className="w-4 h-4" />
+            </Link>
+
+            <Link
+              to="/contact"
+              className="px-8 py-3 bg-white/10 hover:bg-white/20 text-white rounded-lg border border-white/20"
+            >
+              Hire Me / Contact
+            </Link>
+
           </div>
-        </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-          <div className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-1">
-            <div className="w-1.5 h-3 bg-white/50 rounded-full animate-bounce" />
+          {/* SOCIAL */}
+          <div className="flex justify-center gap-4">
+
+            <a
+              href="https://github.com/abilasha24"
+              target="_blank"
+              className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition"
+            >
+              <Github className="w-5 h-5 text-white" />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/abilashaselvanayakam2k06"
+              target="_blank"
+              className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition"
+            >
+              <Linkedin className="w-5 h-5 text-white" />
+            </a>
+
+            <a
+              href="/Abilasha_Resume.pdf"
+              download
+              className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition"
+            >
+              <Download className="w-5 h-5 text-white" />
+            </a>
+
           </div>
+
         </div>
       </section>
 
-      {/* Quick Stats */}
+      {/* STATS */}
       <section className="py-20 bg-white dark:bg-slate-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { value: 'React + Node', label: 'Core Stack' },
-{ value: '3+ Projects', label: 'Completed Work' },
-{ value: 'Intern Ready', label: 'Job Status' },
-{ value: 'Clean Code', label: 'Development Style' },
-            ].map((stat, index) => (
-              <div
-                key={index}
-                className="text-center p-6 rounded-xl bg-slate-50 dark:bg-slate-800 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-              >
-                <div className="text-3xl sm:text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-slate-600 dark:text-slate-400 text-sm">{stat.label}</div>
-              </div>
-            ))}
-          </div>
+
+        <div className="max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6">
+
+          {[
+            { value: "2+", label: "Full Stack Projects" },
+            { value: "1", label: "ML Project" },
+            { value: "Intern Ready", label: "Career Status" },
+            { value: "PHP + React", label: "Core Stack" }
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="text-center p-6 bg-slate-50 dark:bg-slate-800 rounded-xl hover:-translate-y-1 transition"
+            >
+              <h2 className="text-3xl font-bold text-blue-600">
+                {item.value}
+              </h2>
+              <p className="text-sm text-slate-500 mt-2">
+                {item.label}
+              </p>
+            </div>
+          ))}
+
         </div>
+
       </section>
+
     </div>
   );
 }
