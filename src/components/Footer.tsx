@@ -12,7 +12,7 @@ export default function Footer() {
           <a href="https://github.com/abilasha24" target="_blank" rel="noreferrer" style={{ color: 'var(--sub)', display: 'flex' }}>
             <Github size={18} />
           </a>
-          <a href="https://linkedin.com/in/abilasha-selvanayakam" target="_blank" rel="noreferrer" style={{ color: 'var(--sub)', display: 'flex' }}>
+          <a href="https://www.linkedin.com/in/abilashaselvanayakam2k06" target="_blank" rel="noreferrer" style={{ color: 'var(--sub)', display: 'flex' }}>
             <Linkedin size={18} />
           </a>
           <a href="mailto:selvanayagamabilasha@gmail.com" style={{ color: 'var(--sub)', display: 'flex' }}>

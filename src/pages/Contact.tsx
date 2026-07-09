@@ -30,11 +30,11 @@ export default function Contact() {
               </div>
             </a>
 
-            <a href="https://linkedin.com/in/abilasha-selvanayakam" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>
+            <a href="https://www.linkedin.com/in/abilashaselvanayakam2k06" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>
               <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, padding: '1.15rem 1.25rem' }}>
                 <div style={{ color: 'var(--violet2)', marginBottom: '0.5rem' }}><Linkedin size={18} /></div>
                 <div style={{ fontSize: '0.72rem', color: 'var(--sub)', marginBottom: '0.2rem', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 600 }}>LinkedIn</div>
-                <span style={{ fontSize: '0.82rem', color: 'var(--text)', fontWeight: 500 }}>abilasha-selvanayakam</span>
+                <span style={{ fontSize: '0.82rem', color: 'var(--text)', fontWeight: 500 }}>abilashaselvanayakam2k06</span>
               </div>
             </a>
 
