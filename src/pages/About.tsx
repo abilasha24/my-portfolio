@@ -112,7 +112,6 @@ export default function About() {
             {[
               { deg: 'B.Sc. (Hons) Software Engineering', school: 'ICBT Campus – Cardiff Metropolitan University, Jaffna', year: 'Jun 2025 – Jun 2026' },
               { deg: 'Higher Diploma in Computing & Software Engineering', school: 'ICBT Campus – Cardiff Metropolitan University · Merit Pass', year: 'Mar 2023 – Nov 2024' },
-              { deg: 'GCE Advanced Level — Mathematics Stream', school: 'J/Nelliady Central College, Nelliady', year: '2019' },
             ].map((e, i) => (
               <div key={i} style={{
                 background: 'var(--card)', border: '1px solid var(--border)',

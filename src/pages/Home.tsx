@@ -89,7 +89,7 @@ export default function Home() {
               Contact Me
             </Link>
 
-            
+            </div>
 
           {/* Social links */}
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '1.75rem' }}>
