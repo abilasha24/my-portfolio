@@ -1,4 +1,4 @@
-import { Mail, Github, Linkedin, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Github, Linkedin, MapPin, Send } from 'lucide-react';
 
 export default function Contact() {
   return (
@@ -46,13 +46,6 @@ export default function Contact() {
               </div>
             </a>
 
-            <a href="tel:+94774115526" style={{ textDecoration: 'none' }}>
-              <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, padding: '1.15rem 1.25rem' }}>
-                <div style={{ color: 'var(--violet2)', marginBottom: '0.5rem' }}><Phone size={18} /></div>
-                <div style={{ fontSize: '0.72rem', color: 'var(--sub)', marginBottom: '0.2rem', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 600 }}>Phone</div>
-                <span style={{ fontSize: '0.82rem', color: 'var(--text)', fontWeight: 500 }}>+94 77 411 5526</span>
-              </div>
-            </a>
 
             <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, padding: '1.15rem 1.25rem' }}>
               <div style={{ color: 'var(--violet2)', marginBottom: '0.5rem' }}><MapPin size={18} /></div>

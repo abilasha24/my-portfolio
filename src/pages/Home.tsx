@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -89,17 +89,7 @@ export default function Home() {
               Contact Me
             </Link>
 
-            <a href="/Abilasha_Resume.pdf" download style={{
-              display: 'inline-flex', alignItems: 'center', gap: 6,
-              background: 'transparent', color: 'var(--violet2)',
-              border: '1px solid var(--violet)',
-              padding: '0.7rem 1.5rem', borderRadius: 8,
-              fontSize: '0.875rem', fontWeight: 500,
-              fontFamily: 'Space Grotesk, sans-serif', textDecoration: 'none',
-            }}>
-              <Download size={15} /> Resume
-            </a>
-          </div>
+            
 
           {/* Social links */}
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '1.75rem' }}>

@@ -1,4 +1,4 @@
-import { MapPin, Mail, Phone, GraduationCap, Award } from 'lucide-react';
+import { MapPin, Mail,GraduationCap, Award } from 'lucide-react';
 
 export default function About() {
   return (
@@ -68,7 +68,6 @@ export default function About() {
               {[
                 { icon: <MapPin size={15} />, label: 'Location', value: 'Jaffna, Sri Lanka' },
                 { icon: <Mail size={15} />, label: 'Email', value: 'selvanayagamabilasha@gmail.com', link: 'mailto:selvanayagamabilasha@gmail.com' },
-                { icon: <Phone size={15} />, label: 'Phone', value: '+94 77 411 5526' },
                 { icon: <GraduationCap size={15} />, label: 'Degree', value: 'B.Sc. (Hons) Software Engineering' },
                 { icon: <GraduationCap size={15} />, label: 'University', value: 'Cardiff Metropolitan (ICBT)' },
                 { label: '🌐', value: 'Tamil · English · Sinhala', plainLabel: 'Languages' },
