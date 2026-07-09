@@ -1,123 +1,57 @@
-import { useState, useEffect } from 'react';
+﻿import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Sun, Moon, Code2 } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext';
+import { Menu, X, Code2 } from 'lucide-react';
 
 const navLinks = [
-  { path: '/', label: 'Home' },
-  { path: '/about', label: 'About' },
-  { path: '/projects', label: 'Projects' },
-  { path: '/blog', label: 'Blog' },
-  { path: '/contact', label: 'Contact' },
+  { label: 'Home', path: '/' },
+  { label: 'About', path: '/about' },
+  { label: 'Projects', path: '/projects' },
+  { label: 'Contact', path: '/contact' },
 ];
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const { theme, toggleTheme } = useTheme();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   useEffect(() => {
-    setIsOpen(false);
+    setMenuOpen(false);
   }, [location]);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white/90 dark:bg-slate-900/90 backdrop-blur-md shadow-lg'
-          : 'bg-transparent'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <Link
-            to="/"
-            className="flex items-center gap-2 text-xl font-bold text-slate-900 dark:text-white transition-colors"
-          >
-            <Code2 className="w-8 h-8 text-blue-600 dark:text-blue-400" />
-            <span>Abilasha</span>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`relative py-2 text-sm font-medium transition-colors ${
-                  location.pathname === link.path
-                    ? 'text-blue-600 dark:text-blue-400'
-                    : 'text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400'
-                }`}
-              >
-                {link.label}
-                {location.pathname === link.path && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600 dark:bg-blue-400 rounded-full" />
-                )}
-              </Link>
-            ))}
-
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all hover:scale-110"
-              aria-label="Toggle theme"
-            >
-              {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
-            </button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="flex items-center gap-2 md:hidden">
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300"
-              aria-label="Toggle theme"
-            >
-              {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
-            </button>
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-              aria-label="Toggle menu"
-            >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Navigation */}
-        <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ${
-            isOpen ? 'max-h-96 pb-4' : 'max-h-0'
-          }`}
-        >
-          <div className="flex flex-col gap-2 pt-2 bg-white/95 dark:bg-slate-900/95 rounded-lg backdrop-blur-sm">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
-                  location.pathname === link.path
-                    ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400'
-                    : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800'
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
+    <nav style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100, background: scrolled ? 'rgba(13,13,20,0.95)' : 'transparent', backdropFilter: scrolled ? 'blur(16px)' : 'none', borderBottom: scrolled ? '1px solid var(--border)' : 'none', transition: 'all 0.3s ease' }}>
+      <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 1.5rem', height: 60, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 8, textDecoration: 'none' }}>
+          <Code2 size={20} color="var(--violet2)" />
+          <span style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: '1rem', color: 'var(--violet2)' }}>abi.dev</span>
+        </Link>
+        <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+          {navLinks.map(link => (
+            <Link key={link.path} to={link.path} style={{ fontSize: '0.85rem', fontWeight: 500, textDecoration: 'none', color: location.pathname === link.path ? 'var(--violet2)' : 'var(--sub)' }}>
+              {link.label}
+            </Link>
+          ))}
+          <a href="/Abilasha_Resume.pdf" download style={{ fontSize: '0.85rem', fontWeight: 600, textDecoration: 'none', color: 'var(--violet2)', border: '1px solid var(--violet)', padding: '0.35rem 0.9rem', borderRadius: 7 }}>
+            Resume
+          </a>
         </div>
       </div>
+      {menuOpen && (
+        <div style={{ background: 'var(--card)', borderTop: '1px solid var(--border)', padding: '1rem 1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          {navLinks.map(link => (
+            <Link key={link.path} to={link.path} style={{ fontSize: '0.9rem', fontWeight: 500, textDecoration: 'none', color: location.pathname === link.path ? 'var(--violet2)' : 'var(--sub)' }}>
+              {link.label}
+            </Link>
+          ))}
+          <a href="/Abilasha_Resume.pdf" download style={{ fontSize: '0.9rem', color: 'var(--violet2)', fontWeight: 600 }}>Resume</a>
+        </div>
+      )}
     </nav>
   );
 }

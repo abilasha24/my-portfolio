@@ -1,223 +1,104 @@
-import { useState, useRef, FormEvent } from 'react';
-import { Mail, Phone, MapPin, Linkedin, Github, Send, CheckCircle } from 'lucide-react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
-
-const contactInfo = [
-  {
-    icon: Mail,
-    label: 'Email',
-    value: 'selvanayagamabilasha@gmail.com',
-    href: 'mailto:selvanayagamabilasha@gmail.com',
-  },
-  {
-    icon: Phone,
-    label: 'Phone',
-    value: '+94 774115526',
-    href: 'tel:+94774115526',
-  },
-  {
-    icon: MapPin,
-    label: 'Location',
-    value: 'Jaffna, Sri Lanka',
-    href: null,
-  },
-];
-
-const socialLinks = [
-  {
-    name: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/abilashaselvanayakam2k06',
-    icon: Linkedin,
-  },
-  {
-    name: 'GitHub',
-    href: 'https://github.com/abilasha24',
-    icon: Github,
-  },
-];
+import { Mail, Github, Linkedin, Phone, MapPin, Send } from 'lucide-react';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const headerRef = useRef<HTMLElement>(null);
-  const headerVisible = useScrollAnimation(headerRef);
-
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-
-    setIsSubmitting(true);
-
-    try {
-      // REAL ACTION (instead of fake timeout)
-      await fetch("https://formspree.io/f/your-form-id", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formData)
-      });
-
-      setIsSubmitted(true);
-      setFormData({ name: '', email: '', message: '' });
-
-    } catch (error) {
-      alert("Message failed to send. Try email directly.");
-    }
-
-    setIsSubmitting(false);
-  };
-
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 pt-24 pb-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <main style={{ paddingTop: 80, minHeight: '100vh' }}>
 
-        {/* HEADER */}
-        <section
-          ref={headerRef}
-          className={`text-center mb-12 transition-all duration-700 ${
-            headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-        >
-          <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-4">
-            Let’s Work Together
+      <section style={{ padding: '4rem 1.5rem 2rem', textAlign: 'center' }}>
+        <div style={{ maxWidth: 900, margin: '0 auto' }}>
+          <p style={{ fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--violet)', marginBottom: '0.5rem' }}>Get In Touch</p>
+          <h1 style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', fontWeight: 700, letterSpacing: '-0.03em', marginBottom: '1rem' }}>
+            Let's <span style={{ color: 'var(--violet2)' }}>Connect</span>
           </h1>
-
-          <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Open for internship and junior developer opportunities in full-stack development and software engineering.
+          <p style={{ color: 'var(--sub)', maxWidth: 480, margin: '0 auto', fontSize: '0.925rem', lineHeight: 1.8 }}>
+            Open to junior developer roles, internships & remote opportunities. Based in Jaffna, Sri Lanka.
           </p>
-        </section>
+        </div>
+      </section>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <section style={{ padding: '2rem 1.5rem 5rem' }}>
+        <div style={{ maxWidth: 700, margin: '0 auto' }}>
 
-          {/* FORM */}
-          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-8">
+          {/* Contact Cards */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.75rem', marginBottom: '3rem' }}>
 
-            <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
-              Send Message
-            </h2>
-
-            {isSubmitted ? (
-              <div className="text-center py-10">
-                <CheckCircle className="w-14 h-14 text-green-500 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold">Message Sent</h3>
-                <p className="text-slate-500 mt-2">I’ll respond soon.</p>
+            <a href="mailto:selvanayagamabilasha@gmail.com" style={{ textDecoration: 'none' }}>
+              <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, padding: '1.15rem 1.25rem' }}>
+                <div style={{ color: 'var(--violet2)', marginBottom: '0.5rem' }}><Mail size={18} /></div>
+                <div style={{ fontSize: '0.72rem', color: 'var(--sub)', marginBottom: '0.2rem', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 600 }}>Email</div>
+                <span style={{ fontSize: '0.82rem', color: 'var(--text)', fontWeight: 500, wordBreak: 'break-all' }}>selvanayagamabilasha@gmail.com</span>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
+            </a>
 
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  required
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-3 rounded-lg bg-slate-100 dark:bg-slate-700"
-                />
+            <a href="https://linkedin.com/in/abilasha-selvanayakam" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>
+              <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, padding: '1.15rem 1.25rem' }}>
+                <div style={{ color: 'var(--violet2)', marginBottom: '0.5rem' }}><Linkedin size={18} /></div>
+                <div style={{ fontSize: '0.72rem', color: 'var(--sub)', marginBottom: '0.2rem', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 600 }}>LinkedIn</div>
+                <span style={{ fontSize: '0.82rem', color: 'var(--text)', fontWeight: 500 }}>abilasha-selvanayakam</span>
+              </div>
+            </a>
 
-                <input
-                  type="email"
-                  placeholder="Your Email"
-                  required
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 rounded-lg bg-slate-100 dark:bg-slate-700"
-                />
+            <a href="https://github.com/abilasha24" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>
+              <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, padding: '1.15rem 1.25rem' }}>
+                <div style={{ color: 'var(--violet2)', marginBottom: '0.5rem' }}><Github size={18} /></div>
+                <div style={{ fontSize: '0.72rem', color: 'var(--sub)', marginBottom: '0.2rem', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 600 }}>GitHub</div>
+                <span style={{ fontSize: '0.82rem', color: 'var(--text)', fontWeight: 500 }}>abilasha24</span>
+              </div>
+            </a>
 
-                <textarea
-                  placeholder="Your Message (project / internship / collaboration)"
-                  rows={5}
-                  required
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-3 rounded-lg bg-slate-100 dark:bg-slate-700"
-                />
+            <a href="tel:+94774115526" style={{ textDecoration: 'none' }}>
+              <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, padding: '1.15rem 1.25rem' }}>
+                <div style={{ color: 'var(--violet2)', marginBottom: '0.5rem' }}><Phone size={18} /></div>
+                <div style={{ fontSize: '0.72rem', color: 'var(--sub)', marginBottom: '0.2rem', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 600 }}>Phone</div>
+                <span style={{ fontSize: '0.82rem', color: 'var(--text)', fontWeight: 500 }}>+94 77 411 5526</span>
+              </div>
+            </a>
 
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
-                >
-                  {isSubmitting ? "Sending..." : (
-                    <>
-                      <Send className="w-4 h-4" />
-                      Send Message
-                    </>
-                  )}
-                </button>
+            <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, padding: '1.15rem 1.25rem' }}>
+              <div style={{ color: 'var(--violet2)', marginBottom: '0.5rem' }}><MapPin size={18} /></div>
+              <div style={{ fontSize: '0.72rem', color: 'var(--sub)', marginBottom: '0.2rem', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 600 }}>Location</div>
+              <span style={{ fontSize: '0.82rem', color: 'var(--text)', fontWeight: 500 }}>Jaffna, Sri Lanka</span>
+            </div>
 
-              </form>
-            )}
           </div>
 
-          {/* INFO SIDE */}
-          <div className="space-y-8">
+          {/* Message Form */}
+          <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14, padding: '2rem' }}>
+            <h2 style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: '1.1rem', fontWeight: 700, marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: 8 }}>
+              <Send size={17} color="var(--violet2)" /> Send a Message
+            </h2>
 
-            {/* CONTACT INFO */}
-            <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-8">
-
-              <h2 className="text-2xl font-bold mb-6">Contact Info</h2>
-
-              {contactInfo.map((info) => (
-                <div key={info.label} className="flex gap-4 mb-6">
-
-                  <info.icon className="text-blue-500 w-5 h-5 mt-1" />
-
-                  <div>
-                    <p className="text-sm text-slate-500">{info.label}</p>
-                    {info.href ? (
-                      <a href={info.href} className="font-medium hover:text-blue-500">
-                        {info.value}
-                      </a>
-                    ) : (
-                      <p className="font-medium">{info.value}</p>
-                    )}
-                  </div>
-
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                <div>
+                  <label style={{ fontSize: '0.78rem', color: 'var(--sub)', display: 'block', marginBottom: '0.4rem' }}>Name</label>
+                  <input type="text" placeholder="Your name" style={{ width: '100%', background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: 8, padding: '0.65rem 0.9rem', color: 'var(--text)', fontSize: '0.875rem', outline: 'none' }} />
                 </div>
-              ))}
-
-              {/* SOCIAL */}
-              <div className="flex gap-4 mt-6">
-                {socialLinks.map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    target="_blank"
-                    className="p-3 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-blue-600 hover:text-white transition"
-                  >
-                    <link.icon className="w-5 h-5" />
-                  </a>
-                ))}
+                <div>
+                  <label style={{ fontSize: '0.78rem', color: 'var(--sub)', display: 'block', marginBottom: '0.4rem' }}>Email</label>
+                  <input type="email" placeholder="your@email.com" style={{ width: '100%', background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: 8, padding: '0.65rem 0.9rem', color: 'var(--text)', fontSize: '0.875rem', outline: 'none' }} />
+                </div>
               </div>
 
-            </div>
+              <div>
+                <label style={{ fontSize: '0.78rem', color: 'var(--sub)', display: 'block', marginBottom: '0.4rem' }}>Subject</label>
+                <input type="text" placeholder="Job opportunity / Collaboration" style={{ width: '100%', background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: 8, padding: '0.65rem 0.9rem', color: 'var(--text)', fontSize: '0.875rem', outline: 'none' }} />
+              </div>
 
-            {/* CTA BOX */}
-            <div className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white p-8 rounded-2xl">
+              <div>
+                <label style={{ fontSize: '0.78rem', color: 'var(--sub)', display: 'block', marginBottom: '0.4rem' }}>Message</label>
+                <textarea placeholder="Your message..." rows={5} style={{ width: '100%', background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: 8, padding: '0.65rem 0.9rem', color: 'var(--text)', fontSize: '0.875rem', outline: 'none', resize: 'vertical', fontFamily: 'Inter, sans-serif' }} />
+              </div>
 
-              <h3 className="text-xl font-bold mb-2">
-                Available for Internships
-              </h3>
-
-              <p className="text-blue-100 mb-4">
-                Looking for junior developer / internship roles in full-stack or backend development.
-              </p>
-
-              <a
-                href="mailto:selvanayagamabilasha@gmail.com"
-                className="inline-block bg-white text-blue-600 px-5 py-2 rounded-lg font-medium"
-              >
-                Quick Email
+              <a href="mailto:selvanayagamabilasha@gmail.com" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, background: 'var(--violet)', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: 8, fontSize: '0.875rem', fontWeight: 600, fontFamily: 'Space Grotesk, sans-serif', textDecoration: 'none' }}>
+                <Send size={15} /> Send via Email
               </a>
-
             </div>
-
           </div>
 
         </div>
-      </div>
-    </div>
+      </section>
+
+    </main>
   );
 }

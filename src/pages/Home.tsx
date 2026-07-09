@@ -1,124 +1,209 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Github, Linkedin, Download } from 'lucide-react';
+import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <main style={{ minHeight: '100vh' }}>
 
       {/* HERO */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section style={{
+        minHeight: '100vh', display: 'flex', alignItems: 'center',
+        justifyContent: 'center', textAlign: 'center',
+        padding: '100px 1.5rem 60px',
+      }}>
+        <div style={{ maxWidth: 640 }}>
 
-        {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900" />
+          {/* Avatar */}
+          <div style={{
+            width: 100, height: 100, borderRadius: '50%',
+            background: 'linear-gradient(135deg, #8B5CF6, #4C1D95)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            margin: '0 auto 1.5rem',
+            border: '3px solid var(--border)',
+            fontSize: '2rem', fontWeight: 700, color: '#fff',
+            fontFamily: 'Space Grotesk, sans-serif',
+          }}>
+            AS
+          </div>
 
-        {/* Glow */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-blue-500/10 blur-3xl rounded-full" />
-          <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-cyan-500/10 blur-3xl rounded-full" />
-        </div>
+          {/* Badge */}
+          <div style={{
+            display: 'inline-flex', alignItems: 'center', gap: 8,
+            background: 'rgba(139,92,246,0.12)',
+            border: '1px solid rgba(139,92,246,0.25)',
+            color: 'var(--violet2)', fontSize: '0.78rem',
+            padding: '0.3rem 1rem', borderRadius: 99,
+            marginBottom: '1.25rem', fontWeight: 500,
+          }}>
+            <span style={{ width: 7, height: 7, background: 'var(--green)', borderRadius: '50%', display: 'inline-block' }} />
+            Open to opportunities
+          </div>
 
-        {/* CONTENT */}
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-
-          <p className="text-blue-400 text-sm tracking-widest uppercase mb-4">
-            Available for Internship / Junior Developer Roles
-          </p>
-
-          <h1 className="text-4xl sm:text-6xl font-bold text-white mb-6 leading-tight">
+          {/* Name */}
+          <h1 style={{
+            fontFamily: 'Space Grotesk, sans-serif',
+            fontSize: 'clamp(2rem, 5vw, 3.25rem)',
+            fontWeight: 700, lineHeight: 1.1,
+            letterSpacing: '-0.03em', marginBottom: '0.75rem',
+          }}>
             Hi, I'm{' '}
-            <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              Abilasha Selvanayakam
-            </span>
+            <span style={{ color: 'var(--violet2)' }}>Abilasha</span>
+            <br />Selvanayakam
           </h1>
 
-          <p className="text-xl text-slate-300 mb-3">
-            Full Stack Developer (React / PHP / Node.js)
+          {/* Role */}
+          <p style={{ color: 'var(--sub)', fontSize: '1rem', marginBottom: '0.75rem' }}>
+            Junior Full Stack Developer · AI-Integrated Apps
           </p>
 
-          <p className="text-slate-400 max-w-2xl mx-auto mb-8">
-            I build real-world full-stack applications with authentication systems,
-            database design, and deployed production projects using PHP, MySQL, React, and Python.
+          {/* Description */}
+          <p style={{
+            color: 'var(--sub)', fontSize: '0.925rem',
+            lineHeight: 1.8, marginBottom: '2rem', maxWidth: 500, margin: '0 auto 2rem',
+          }}>
+            Building production-ready web apps with React, Next.js, PHP & Python.
+            Adding AI — from LLM agents to ML models — into real-world projects
+            from Jaffna, Sri Lanka.
           </p>
 
-          {/* CTA */}
-          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-10">
-
-            <Link
-              to="/projects"
-              className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg flex items-center justify-center gap-2 transition"
-            >
-              View Projects <ArrowRight className="w-4 h-4" />
+          {/* Buttons */}
+          <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Link to="/projects" style={{
+              display: 'inline-flex', alignItems: 'center', gap: 6,
+              background: 'var(--violet)', color: '#fff',
+              padding: '0.7rem 1.5rem', borderRadius: 8,
+              fontSize: '0.875rem', fontWeight: 600,
+              fontFamily: 'Space Grotesk, sans-serif', textDecoration: 'none',
+            }}>
+              View Projects <ArrowRight size={15} />
             </Link>
 
-            <Link
-              to="/contact"
-              className="px-8 py-3 bg-white/10 hover:bg-white/20 text-white rounded-lg border border-white/20"
-            >
-              Hire Me / Contact
+            <Link to="/contact" style={{
+              display: 'inline-flex', alignItems: 'center', gap: 6,
+              background: 'transparent', color: 'var(--text)',
+              border: '1px solid var(--border)',
+              padding: '0.7rem 1.5rem', borderRadius: 8,
+              fontSize: '0.875rem', fontWeight: 500,
+              fontFamily: 'Space Grotesk, sans-serif', textDecoration: 'none',
+            }}>
+              Contact Me
             </Link>
 
+            <a href="/Abilasha_Resume.pdf" download style={{
+              display: 'inline-flex', alignItems: 'center', gap: 6,
+              background: 'transparent', color: 'var(--violet2)',
+              border: '1px solid var(--violet)',
+              padding: '0.7rem 1.5rem', borderRadius: 8,
+              fontSize: '0.875rem', fontWeight: 500,
+              fontFamily: 'Space Grotesk, sans-serif', textDecoration: 'none',
+            }}>
+              <Download size={15} /> Resume
+            </a>
           </div>
 
-          {/* SOCIAL */}
-          <div className="flex justify-center gap-4">
-
-            <a
-              href="https://github.com/abilasha24"
-              target="_blank"
-              className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition"
-            >
-              <Github className="w-5 h-5 text-white" />
+          {/* Social links */}
+          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '1.75rem' }}>
+            <a href="https://github.com/abilasha24" target="_blank" rel="noreferrer"
+              style={{ color: 'var(--sub)', transition: 'color 0.2s' }}
+              onMouseOver={e => (e.currentTarget.style.color = 'var(--text)')}
+              onMouseOut={e => (e.currentTarget.style.color = 'var(--sub)')}>
+              <Github size={20} />
             </a>
-
-            <a
-              href="https://www.linkedin.com/in/abilashaselvanayakam2k06"
-              target="_blank"
-              className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition"
-            >
-              <Linkedin className="w-5 h-5 text-white" />
+            <a href="https://linkedin.com/in/abilasha-selvanayakam" target="_blank" rel="noreferrer"
+              style={{ color: 'var(--sub)', transition: 'color 0.2s' }}
+              onMouseOver={e => (e.currentTarget.style.color = 'var(--text)')}
+              onMouseOut={e => (e.currentTarget.style.color = 'var(--sub)')}>
+              <Linkedin size={20} />
             </a>
-
-            <a
-              href="/Abilasha_Resume.pdf"
-              download
-              className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition"
-            >
-              <Download className="w-5 h-5 text-white" />
+            <a href="mailto:selvanayagamabilasha@gmail.com"
+              style={{ color: 'var(--sub)', transition: 'color 0.2s' }}
+              onMouseOver={e => (e.currentTarget.style.color = 'var(--text)')}
+              onMouseOut={e => (e.currentTarget.style.color = 'var(--sub)')}>
+              <Mail size={20} />
             </a>
+          </div>
 
+          {/* Stats */}
+          <div style={{
+            display: 'flex', justifyContent: 'center', gap: '3rem',
+            marginTop: '3rem', paddingTop: '2rem',
+            borderTop: '1px solid var(--border)',
+          }}>
+            {[
+              { num: '5+', label: 'Projects Shipped' },
+              { num: '2', label: 'Degrees' },
+              { num: '2030', label: 'AI Dev Goal' },
+            ].map(s => (
+              <div key={s.label}>
+                <div style={{
+                  fontFamily: 'Space Grotesk, sans-serif',
+                  fontSize: '1.6rem', fontWeight: 700, color: 'var(--violet2)',
+                }}>{s.num}</div>
+                <div style={{ fontSize: '0.75rem', color: 'var(--sub)', marginTop: 2 }}>{s.label}</div>
+              </div>
+            ))}
           </div>
 
         </div>
       </section>
 
-      {/* STATS */}
-      <section className="py-20 bg-white dark:bg-slate-900">
+      {/* SKILLS PREVIEW */}
+      <section style={{
+        padding: '4rem 1.5rem',
+        background: 'var(--card)',
+        borderTop: '1px solid var(--border)',
+      }}>
+        <div style={{ maxWidth: 900, margin: '0 auto' }}>
+          <p style={{
+            textAlign: 'center', fontSize: '0.72rem', fontWeight: 600,
+            letterSpacing: '0.1em', textTransform: 'uppercase',
+            color: 'var(--violet)', marginBottom: '0.5rem',
+          }}>Tech Stack</p>
+          <h2 style={{
+            fontFamily: 'Space Grotesk, sans-serif', textAlign: 'center',
+            fontSize: 'clamp(1.4rem, 3vw, 1.9rem)', fontWeight: 700,
+            marginBottom: '2rem', letterSpacing: '-0.02em',
+          }}>
+            Skills & <span style={{ color: 'var(--violet2)' }}>Technologies</span>
+          </h2>
 
-        <div className="max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6">
-
-          {[
-            { value: "2+", label: "Full Stack Projects" },
-            { value: "1", label: "ML Project" },
-            { value: "Intern Ready", label: "Career Status" },
-            { value: "PHP + React", label: "Core Stack" }
-          ].map((item, i) => (
-            <div
-              key={i}
-              className="text-center p-6 bg-slate-50 dark:bg-slate-800 rounded-xl hover:-translate-y-1 transition"
-            >
-              <h2 className="text-3xl font-bold text-blue-600">
-                {item.value}
-              </h2>
-              <p className="text-sm text-slate-500 mt-2">
-                {item.label}
-              </p>
-            </div>
-          ))}
-
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '1rem',
+          }}>
+            {[
+              { cat: 'Frontend', skills: ['React', 'Next.js 14', 'TypeScript', 'Tailwind CSS', 'HTML5', 'CSS3', 'Vite'] },
+              { cat: 'Backend', skills: ['PHP', 'Node.js', 'Express', 'REST APIs', 'JWT Auth'] },
+              { cat: 'Database', skills: ['MySQL', 'PostgreSQL', 'Prisma ORM', 'Neon DB'] },
+              { cat: 'AI & ML', skills: ['Google ADK', 'Groq API', 'LLaMA 3.3', 'Scikit-learn', 'Streamlit'] },
+              { cat: 'Languages', skills: ['JavaScript', 'TypeScript', 'PHP', 'Python', 'SQL'] },
+              { cat: 'Tools', skills: ['Git', 'GitHub', 'Vercel', 'VS Code', 'Postman', 'Vite'] },
+            ].map(({ cat, skills }) => (
+              <div key={cat} style={{
+                background: 'var(--bg)', border: '1px solid var(--border)',
+                borderRadius: 12, padding: '1.15rem',
+              }}>
+                <p style={{
+                  fontSize: '0.72rem', fontWeight: 600,
+                  letterSpacing: '0.08em', textTransform: 'uppercase',
+                  color: 'var(--violet)', marginBottom: '0.85rem',
+                }}>{cat}</p>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+                  {skills.map(s => (
+                    <span key={s} style={{
+                      background: 'var(--card2)', color: 'var(--sub)',
+                      fontSize: '0.78rem', padding: '0.25rem 0.65rem',
+                      borderRadius: 6, border: '1px solid var(--border)',
+                    }}>{s}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-
       </section>
 
-    </div>
+    </main>
   );
 }

@@ -34,7 +34,7 @@ export const projects: Project[] = [
   ],
 
   github: 'https://github.com/abilasha24/smart_fit.git',
-  driveLink: 'https://drive.google.com/file/d/1-IGlcJW7xDVNzeKqzJX4jX4j3zfOy7C3lyd/view',
+  liveDemo: 'http://smartfitweb.rf.gd',
   image: 'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg'
 },
 
@@ -57,7 +57,7 @@ export const projects: Project[] = [
     'Web interface using Streamlit'
   ],
 
-  liveDemo: 'https://student-score-prediction1-app-an5yveweb5jgse5c7c7kcg.streamlit.app',
+  liveDemo: 'https://student-score-prediction1-app-an5yveweb5jgse5c7c7kcg.streamlit.app/',
   image: 'https://images.pexels.com/photos/5905494/pexels-photo-5905494.jpeg'
 } 
 ];

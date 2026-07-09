@@ -2,86 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    @apply bg-white dark:bg-slate-900 text-slate-900 dark:text-white transition-colors duration-300;
-  }
+:root {
+  --bg: #0D0D14;
+  --card: #16161F;
+  --card2: #1C1C28;
+  --violet: #8B5CF6;
+  --violet2: #A78BFA;
+  --border: #2A2A3D;
+  --text: #EDECF8;
+  --sub: #9B9BAD;
+  --green: #34D399;
 }
 
-@layer utilities {
-  .animate-fade-in {
-    animation: fadeIn 0.8s ease-out forwards;
-  }
-
-  .animate-fade-in-up {
-    animation: fadeInUp 0.8s ease-out forwards;
-  }
-
-  .delay-100 {
-    animation-delay: 100ms;
-  }
-
-  .delay-200 {
-    animation-delay: 200ms;
-  }
-
-  .delay-300 {
-    animation-delay: 300ms;
-  }
-
-  .delay-500 {
-    animation-delay: 500ms;
-  }
-
-  .delay-1000 {
-    animation-delay: 1000ms;
-  }
-
-  .line-clamp-3 {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+html {
+  scroll-behavior: smooth;
+  font-size: 120%;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
 }
-
 ::-webkit-scrollbar-track {
-  @apply bg-slate-100 dark:bg-slate-800;
+  background: var(--bg);
 }
-
 ::-webkit-scrollbar-thumb {
-  @apply bg-slate-300 dark:bg-slate-600 rounded-full;
+  background: var(--violet);
+  border-radius: 3px;
 }
-
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-slate-400 dark:bg-slate-500;
+@media (max-width: 640px) {
+  .hidden-mobile { display: none !important; }
+  .show-mobile { display: block !important; }
+}
+@media (min-width: 641px) {
+  .show-mobile { display: none !important; }
 }

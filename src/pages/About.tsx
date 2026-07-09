@@ -1,249 +1,171 @@
-import { useRef } from 'react';
-import { Download, Code, Database, Globe, Palette, Wrench } from 'lucide-react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
-
-const skills = {
-  programming: {
-    icon: Code,
-    title: 'Programming',
-    items: ['Java', 'Python', 'SQL'],
-    note: 'Problem solving & backend logic development',
-  },
-  web: {
-    icon: Globe,
-    title: 'Web Development',
-    items: ['HTML', 'CSS', 'JavaScript', 'PHP', 'React'],
-    note: 'Full-stack web application development',
-  },
-  database: {
-    icon: Database,
-    title: 'Database',
-    items: ['MySQL'],
-    note: 'Database design & management',
-  },
-  tools: {
-    icon: Wrench,
-    title: 'Tools',
-    items: ['Git', 'GitHub', 'VS Code', 'Microsoft Office'],
-    note: 'Development & version control tools',
-  },
-  design: {
-    icon: Palette,
-    title: 'UI/UX & Design',
-    items: ['Basic Design', 'Adobe Photoshop'],
-    note: 'Basic UI/UX understanding',
-  },
-};
-
-const education = [
-  {
-    degree: 'BSc Software Engineering',
-    institution: 'ICBT Campus',
-    year: '2025 - 2026',
-    description:
-      'Focused on software engineering principles, system design, databases, and application development with hands-on full-stack projects.',
-    current: true,
-  },
-  {
-    degree: 'Higher Diploma in Computing & Software Engineering',
-    institution: 'ICBT Campus',
-    year: '2023 - 2024',
-    description:
-      'Built strong foundation in programming, databases, and software development lifecycle.',
-    current: false,
-  },
-  {
-    degree: 'A/L Mathematics Stream',
-    institution: 'J/ Nelliady Central College',
-    year: 'Completed',
-    description:
-      'Developed strong analytical and logical thinking skills through mathematics studies.',
-    current: false,
-  },
-];
+import { MapPin, Mail, Phone, GraduationCap, Award } from 'lucide-react';
 
 export default function About() {
-  const profileRef = useRef<HTMLElement>(null);
-  const skillsRef = useRef<HTMLElement>(null);
-  const educationRef = useRef<HTMLElement>(null);
-
-  const profileVisible = useScrollAnimation(profileRef);
-  const skillsVisible = useScrollAnimation(skillsRef);
-  const educationVisible = useScrollAnimation(educationRef);
-
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 pt-24 pb-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <main style={{ paddingTop: 80, minHeight: '100vh' }}>
 
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-4">
-            About Me
+      {/* HEADER */}
+      <section style={{ padding: '4rem 1.5rem 2rem', textAlign: 'center' }}>
+        <div style={{ maxWidth: 900, margin: '0 auto' }}>
+          <p style={{
+            fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.1em',
+            textTransform: 'uppercase', color: 'var(--violet)', marginBottom: '0.5rem',
+          }}>About Me</p>
+          <h1 style={{
+            fontFamily: 'Space Grotesk, sans-serif',
+            fontSize: 'clamp(1.8rem, 4vw, 2.5rem)',
+            fontWeight: 700, letterSpacing: '-0.03em', marginBottom: '1rem',
+          }}>
+            Developer from <span style={{ color: 'var(--violet2)' }}>Jaffna</span>
           </h1>
-          <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Software developer focused on building real-world full-stack and machine learning applications
+          <p style={{ color: 'var(--sub)', maxWidth: 520, margin: '0 auto', fontSize: '0.925rem', lineHeight: 1.8 }}>
+            Junior Full Stack Developer with a passion for building AI-integrated web applications.
           </p>
         </div>
+      </section>
 
-        {/* Professional Summary */}
-        <section
-          ref={profileRef}
-          className={`mb-20 transition-all duration-700 ${
-            profileVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-        >
-          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-8 md:p-12">
+      {/* ABOUT GRID */}
+      <section style={{ padding: '2rem 1.5rem', background: 'var(--card)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
+        <div style={{ maxWidth: 900, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2.5rem' }}>
 
-            <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
-              Professional Summary
+          {/* Left */}
+          <div>
+            <h2 style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem' }}>
+              Who I Am
             </h2>
-
-            <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mb-8">
-              Software Engineering undergraduate focused on building scalable full-stack web applications
-              and machine learning systems. Experienced in developing role-based systems, backend logic,
-              database design, and deploying real-world applications using PHP, MySQL, and Python.
+            <p style={{ color: 'var(--sub)', fontSize: '0.9rem', lineHeight: 1.85, marginBottom: '1rem' }}>
+              I'm a Junior Full Stack Web Developer specializing in React, PHP, and MySQL.
+              I build role-based web applications, REST APIs, and authentication systems.
+            </p>
+            <p style={{ color: 'var(--sub)', fontSize: '0.9rem', lineHeight: 1.85, marginBottom: '1rem' }}>
+              I hold a B.Sc. (Hons) in Software Engineering from Cardiff Metropolitan
+              University (ICBT Campus, Jaffna) and an HND in Computing with Merit Pass.
+            </p>
+            <p style={{ color: 'var(--sub)', fontSize: '0.9rem', lineHeight: 1.85 }}>
+              My long-term goal is to become a Full Stack AI-integrated Developer by 2030,
+              bridging modern web development with intelligent systems.
             </p>
 
-            <a
-              href="/resume.pdf"
-              download
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105"
-            >
-              <Download className="w-5 h-5" />
-              Download Resume
-            </a>
-
+            {/* Pills */}
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '1.25rem' }}>
+              {['React', 'TypeScript', 'Next.js', 'PHP', 'Python', 'PostgreSQL', 'Google ADK', 'Tailwind CSS'].map(s => (
+                <span key={s} style={{
+                  background: 'rgba(139,92,246,0.1)',
+                  border: '1px solid rgba(139,92,246,0.2)',
+                  color: 'var(--violet2)', fontSize: '0.78rem',
+                  padding: '0.3rem 0.75rem', borderRadius: 99,
+                }}>{s}</span>
+              ))}
+            </div>
           </div>
-        </section>
 
-        {/* Skills Section */}
-        <section
-          ref={skillsRef}
-          className={`mb-20 transition-all duration-700 ${
-            skillsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-        >
-          <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-8 text-center">
-            Skills & Technologies
+          {/* Right — Info */}
+          <div>
+            <h2 style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem' }}>
+              Quick Info
+            </h2>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              {[
+                { icon: <MapPin size={15} />, label: 'Location', value: 'Jaffna, Sri Lanka' },
+                { icon: <Mail size={15} />, label: 'Email', value: 'selvanayagamabilasha@gmail.com', link: 'mailto:selvanayagamabilasha@gmail.com' },
+                { icon: <Phone size={15} />, label: 'Phone', value: '+94 77 411 5526' },
+                { icon: <GraduationCap size={15} />, label: 'Degree', value: 'B.Sc. (Hons) Software Engineering' },
+                { icon: <GraduationCap size={15} />, label: 'University', value: 'Cardiff Metropolitan (ICBT)' },
+                { label: '🌐', value: 'Tamil · English · Sinhala', plainLabel: 'Languages' },
+                { label: '💼', value: 'Open to opportunities', plainLabel: 'Status', green: true },
+              ].map((row, i) => (
+                <div key={i} style={{
+                  display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                  padding: '0.7rem 0', borderBottom: '1px solid var(--border)',
+                  fontSize: '0.85rem',
+                }}>
+                  <span style={{ color: 'var(--sub)', display: 'flex', alignItems: 'center', gap: 6 }}>
+                    {row.icon || row.label} {row.plainLabel || row.label}
+                  </span>
+                  {row.link ? (
+                    <a href={row.link} style={{ color: 'var(--violet2)', fontWeight: 500, textAlign: 'right' }}>{row.value}</a>
+                  ) : (
+                    <span style={{ color: row.green ? 'var(--green)' : 'var(--text)', fontWeight: 500, textAlign: 'right' }}>{row.value}</span>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* EDUCATION */}
+      <section style={{ padding: '4rem 1.5rem' }}>
+        <div style={{ maxWidth: 900, margin: '0 auto' }}>
+          <p style={{
+            fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.1em',
+            textTransform: 'uppercase', color: 'var(--violet)', marginBottom: '0.5rem',
+          }}>Background</p>
+          <h2 style={{
+            fontFamily: 'Space Grotesk, sans-serif', fontSize: 'clamp(1.4rem, 3vw, 1.9rem)',
+            fontWeight: 700, marginBottom: '2rem', letterSpacing: '-0.02em',
+          }}>
+            Education & <span style={{ color: 'var(--violet2)' }}>Certifications</span>
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-            {Object.entries(skills).map(([key, skill]) => (
-              <div
-                key={key}
-                className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-              >
-
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30">
-                    <skill.icon className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                  </div>
-
-                  <h3 className="font-semibold text-slate-900 dark:text-white">
-                    {skill.title}
-                  </h3>
+          {/* Education list */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2.5rem' }}>
+            {[
+              { deg: 'B.Sc. (Hons) Software Engineering', school: 'ICBT Campus – Cardiff Metropolitan University, Jaffna', year: 'Jun 2025 – Jun 2026' },
+              { deg: 'Higher Diploma in Computing & Software Engineering', school: 'ICBT Campus – Cardiff Metropolitan University · Merit Pass', year: 'Mar 2023 – Nov 2024' },
+              { deg: 'GCE Advanced Level — Mathematics Stream', school: 'J/Nelliady Central College, Nelliady', year: '2019' },
+            ].map((e, i) => (
+              <div key={i} style={{
+                background: 'var(--card)', border: '1px solid var(--border)',
+                borderRadius: 12, padding: '1.15rem 1.35rem',
+                display: 'flex', gap: '1rem', alignItems: 'flex-start',
+              }}>
+                <div style={{
+                  width: 10, height: 10, borderRadius: '50%',
+                  background: 'var(--violet)', flexShrink: 0, marginTop: 5,
+                }} />
+                <div>
+                  <div style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: '0.9rem', fontWeight: 700 }}>{e.deg}</div>
+                  <div style={{ fontSize: '0.82rem', color: 'var(--violet2)', marginTop: 3 }}>{e.school}</div>
+                  <div style={{ fontSize: '0.75rem', color: 'var(--sub)', marginTop: 3 }}>{e.year}</div>
                 </div>
-
-                <p className="text-sm text-slate-500 dark:text-slate-400 mb-3">
-                  {skill.note}
-                </p>
-
-                <div className="flex flex-wrap gap-2">
-                  {skill.items.map((item, index) => (
-                    <span
-                      key={index}
-                      className="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded-full"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-
               </div>
             ))}
-
           </div>
-        </section>
 
-        {/* Education Section */}
-        <section
-          ref={educationRef}
-          className={`transition-all duration-700 ${
-            educationVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-        >
-          <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-8 text-center">
-            Education
-          </h2>
-
-          <div className="relative max-w-3xl mx-auto">
-
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-blue-200 dark:bg-blue-900/50 transform md:-translate-x-1/2" />
-
-            {education.map((edu, index) => (
-              <div
-                key={index}
-                className={`relative flex items-start mb-12 last:mb-0 ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
-              >
-
-                <div className="absolute left-4 md:left-1/2 w-4 h-4 bg-blue-600 dark:bg-blue-400 rounded-full border-4 border-white dark:border-slate-900 transform -translate-x-1/2 z-10" />
-
-                <div
-                  className={`ml-12 md:ml-0 md:w-1/2 ${
-                    index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'
-                  }`}
-                >
-                  <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300">
-
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
-                        {edu.year}
-                      </span>
-
-                      {edu.current && (
-                        <span className="px-2 py-0.5 text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full">
-                          Current
-                        </span>
-                      )}
-                    </div>
-
-                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-1">
-                      {edu.degree}
-                    </h3>
-
-                    <p className="text-slate-600 dark:text-slate-400 text-sm mb-2">
-                      {edu.institution}
-                    </p>
-
-                    <p className="text-slate-500 dark:text-slate-500 text-sm">
-                      {edu.description}
-                    </p>
-
-                  </div>
-                </div>
-
+          {/* Certifications */}
+          <h3 style={{
+            fontFamily: 'Space Grotesk, sans-serif', fontSize: '1rem',
+            fontWeight: 700, marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: 8,
+          }}>
+            <Award size={18} color="var(--violet2)" /> Certifications & Workshops
+          </h3>
+          <div style={{
+            display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '0.65rem',
+          }}>
+            {[
+              { name: ' Higher Diploma in Computing & Software Engineering', org: 'ICBT Campus (Cardiff Met), Nov 2024' },
+              { name: 'AI Agents Intensive Vibe Coding Course', org: 'Kaggle & Google · Jun 2026' },
+              { name: 'AI Agents Intensive Course', org: 'Kaggle & Google · Nov 2025' },
+              { name: 'Advanced Python Programming', org: 'i-Tech Academy · May 2025' },
+              { name: 'Python Certificate', org: 'GUVI (HCL & Google) · May 2025' },
+              { name: 'Diploma in IT & Artificial Intelligence', org: 'CASED Institute · 2025' },
+              { name: 'Workshop on NLP & Computer Vision', org: 'ICBT Campus Jaffna · May 2026' },
+              { name: 'Advanced Graphic Design', org: 'Orinsto Institute · Jun 2025' },
+              { name: ' Microsoft Office', org: ' DMI Computer Education, Jan 2020' },
+            ].map((c, i) => (
+              <div key={i} style={{
+                background: 'var(--card)', border: '1px solid var(--border)',
+                borderRadius: 10, padding: '0.85rem 1rem',
+              }}>
+                <div style={{ fontSize: '0.82rem', color: 'var(--text)', fontWeight: 500 }}>{c.name}</div>
+                <div style={{ fontSize: '0.72rem', color: 'var(--sub)', marginTop: 3 }}>{c.org}</div>
               </div>
             ))}
-
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Final CTA */}
-        <section className="text-center mt-16">
-          <h2 className="text-xl font-bold text-slate-900 dark:text-white">
-            What I'm Looking For
-          </h2>
-          <p className="text-slate-600 dark:text-slate-400 mt-2">
-            Seeking internship or junior developer opportunities in full-stack development or software engineering roles.
-          </p>
-        </section>
-
-      </div>
-    </div>
+    </main>
   );
 }
