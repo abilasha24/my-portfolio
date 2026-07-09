@@ -8,7 +8,7 @@ const projects = [
     desc: 'Tamil-language AI agent for farmers in Jaffna — real-time weather, crop suggestions & market prices using LLaMA 3.3 via Groq. Multi-tool orchestration with Google ADK.',
     tech: ['Python', 'Google ADK', 'Groq API', 'LLaMA 3.3', 'Streamlit'],
     github: 'https://github.com/abilasha24/Tamil-farmer-agent',
-    live: 'https://tamil-farmer-agent-mwczrux6x9cv4hdlx2wpqw.streamlit.app',
+    live: 'https://tamil-farmer-agent-j3cyzcehjeedshdjfmt3mw.streamlit.app',
     icon: FarmerIcon,
   },
   {
