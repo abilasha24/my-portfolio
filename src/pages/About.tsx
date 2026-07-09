@@ -34,7 +34,7 @@ export default function About() {
               Who I Am
             </h2>
             <p style={{ color: 'var(--sub)', fontSize: '0.9rem', lineHeight: 1.85, marginBottom: '1rem' }}>
-              I'm a Junior Full Stack Web Developer specializing in React, PHP, and MySQL.
+              I'm a Junior Full Stack Developer specializing in React, Next.js, TypeScript, and PostgreSQL — with growing expertise in AI-integrated applications using Python and Google ADK.
               I build role-based web applications, REST APIs, and authentication systems.
             </p>
             <p style={{ color: 'var(--sub)', fontSize: '0.9rem', lineHeight: 1.85, marginBottom: '1rem' }}>
