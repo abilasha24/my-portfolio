@@ -109,7 +109,7 @@ export default function Home() {
               onMouseOut={e => (e.currentTarget.style.color = 'var(--sub)')}>
               <Github size={20} />
             </a>
-            <a href="https://linkedin.com/in/abilasha-selvanayakam" target="_blank" rel="noreferrer"
+            <a href="https://linkedin.com/in/abilashaselvanayakam2k06" target="_blank" rel="noreferrer"
               style={{ color: 'var(--sub)', transition: 'color 0.2s' }}
               onMouseOver={e => (e.currentTarget.style.color = 'var(--text)')}
               onMouseOut={e => (e.currentTarget.style.color = 'var(--sub)')}>
