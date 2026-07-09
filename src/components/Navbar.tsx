@@ -37,9 +37,6 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <a href="/Abilasha_Resume.pdf" download style={{ fontSize: '0.85rem', fontWeight: 600, textDecoration: 'none', color: 'var(--violet2)', border: '1px solid var(--violet)', padding: '0.35rem 0.9rem', borderRadius: 7 }}>
-            Resume
-          </a>
         </div>
       </div>
       {menuOpen && (
@@ -49,7 +46,6 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <a href="/Abilasha_Resume.pdf" download style={{ fontSize: '0.9rem', color: 'var(--violet2)', fontWeight: 600 }}>Resume</a>
         </div>
       )}
     </nav>
