@@ -119,11 +119,10 @@ export default function Home() {
             marginTop: '3rem', paddingTop: '2rem',
             borderTop: '1px solid var(--border)',
           }}>
-            {[
-              { num: '5+', label: 'Projects Shipped' },
-              { num: '2', label: 'Degrees' },
-              { num: '2030', label: 'AI Dev Goal' },
-            ].map(s => (
+           {[
+  { num: '5+', label: 'Projects Shipped' },
+  { num: '2', label: 'Degrees' },
+].map(s => (
               <div key={s.label}>
                 <div style={{
                   fontFamily: 'Space Grotesk, sans-serif',
