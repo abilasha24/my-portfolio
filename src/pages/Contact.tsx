@@ -8,7 +8,7 @@ export default function Contact() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const mailtoLink = `mailto:selvanayagamabilasha@gmail.com?subject=${encodeURIComponent(form.subject || 'Job opportunity / Collaboration')}&body=${encodeURIComponent(form.message + '\n\n---\nFrom: ' + (form.name || 'N/A') + '\nEmail: ' + (form.email || 'N/A'))}`;
+ const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=selvanayagamabilasha@gmail.com&su=${encodeURIComponent(form.subject || 'Job opportunity / Collaboration')}&body=${encodeURIComponent(form.message + '\n\n---\nFrom: ' + (form.name || 'N/A') + '\nEmail: ' + (form.email || 'N/A'))}`;
 
   return (
     <main style={{ paddingTop: 80, minHeight: '100vh' }}>
@@ -86,9 +86,9 @@ export default function Contact() {
                 <textarea name="message" value={form.message} onChange={handleChange} placeholder="Your message..." rows={5} style={{ width: '100%', background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: 8, padding: '0.65rem 0.9rem', color: 'var(--text)', fontSize: '0.875rem', outline: 'none', resize: 'vertical', fontFamily: 'Inter, sans-serif' }} />
               </div>
 
-              <a href={mailtoLink} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, background: 'var(--violet)', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: 8, fontSize: '0.875rem', fontWeight: 600, fontFamily: 'Space Grotesk, sans-serif', textDecoration: 'none' }}>
-                <Send size={15} /> Send via Email
-              </a>
+              <a href={mailtoLink} target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, background: 'var(--violet)', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: 8, fontSize: '0.875rem', fontWeight: 600, fontFamily: 'Space Grotesk, sans-serif', textDecoration: 'none' }}>
+  <Send size={15} /> Send via Email
+</a>
             </div>
           </div>
 
