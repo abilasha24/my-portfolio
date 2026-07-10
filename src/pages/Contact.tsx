@@ -1,9 +1,17 @@
+import { useState } from 'react';
 import { Mail, Github, Linkedin, MapPin, Send } from 'lucide-react';
 
 export default function Contact() {
+  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const mailtoLink = `mailto:selvanayagamabilasha@gmail.com?subject=${encodeURIComponent(form.subject || 'Job opportunity / Collaboration')}&body=${encodeURIComponent(form.message + '\n\n---\nFrom: ' + (form.name || 'N/A') + '\nEmail: ' + (form.email || 'N/A'))}`;
+
   return (
     <main style={{ paddingTop: 80, minHeight: '100vh' }}>
-
       <section style={{ padding: '4rem 1.5rem 2rem', textAlign: 'center' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <p style={{ fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--violet)', marginBottom: '0.5rem' }}>Get In Touch</p>
@@ -19,9 +27,7 @@ export default function Contact() {
       <section style={{ padding: '2rem 1.5rem 5rem' }}>
         <div style={{ maxWidth: 700, margin: '0 auto' }}>
 
-          {/* Contact Cards */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.75rem', marginBottom: '3rem' }}>
-
             <a href="mailto:selvanayagamabilasha@gmail.com" style={{ textDecoration: 'none' }}>
               <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, padding: '1.15rem 1.25rem' }}>
                 <div style={{ color: 'var(--violet2)', marginBottom: '0.5rem' }}><Mail size={18} /></div>
@@ -46,16 +52,13 @@ export default function Contact() {
               </div>
             </a>
 
-
             <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, padding: '1.15rem 1.25rem' }}>
               <div style={{ color: 'var(--violet2)', marginBottom: '0.5rem' }}><MapPin size={18} /></div>
               <div style={{ fontSize: '0.72rem', color: 'var(--sub)', marginBottom: '0.2rem', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 600 }}>Location</div>
               <span style={{ fontSize: '0.82rem', color: 'var(--text)', fontWeight: 500 }}>Jaffna, Sri Lanka</span>
             </div>
-
           </div>
 
-          {/* Message Form */}
           <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14, padding: '2rem' }}>
             <h2 style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: '1.1rem', fontWeight: 700, marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: 8 }}>
               <Send size={17} color="var(--violet2)" /> Send a Message
@@ -65,25 +68,25 @@ export default function Contact() {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <div>
                   <label style={{ fontSize: '0.78rem', color: 'var(--sub)', display: 'block', marginBottom: '0.4rem' }}>Name</label>
-                  <input type="text" placeholder="Your name" style={{ width: '100%', background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: 8, padding: '0.65rem 0.9rem', color: 'var(--text)', fontSize: '0.875rem', outline: 'none' }} />
+                  <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="Your name" style={{ width: '100%', background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: 8, padding: '0.65rem 0.9rem', color: 'var(--text)', fontSize: '0.875rem', outline: 'none' }} />
                 </div>
                 <div>
                   <label style={{ fontSize: '0.78rem', color: 'var(--sub)', display: 'block', marginBottom: '0.4rem' }}>Email</label>
-                  <input type="email" placeholder="your@email.com" style={{ width: '100%', background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: 8, padding: '0.65rem 0.9rem', color: 'var(--text)', fontSize: '0.875rem', outline: 'none' }} />
+                  <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="your@email.com" style={{ width: '100%', background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: 8, padding: '0.65rem 0.9rem', color: 'var(--text)', fontSize: '0.875rem', outline: 'none' }} />
                 </div>
               </div>
 
               <div>
                 <label style={{ fontSize: '0.78rem', color: 'var(--sub)', display: 'block', marginBottom: '0.4rem' }}>Subject</label>
-                <input type="text" placeholder="Job opportunity / Collaboration" style={{ width: '100%', background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: 8, padding: '0.65rem 0.9rem', color: 'var(--text)', fontSize: '0.875rem', outline: 'none' }} />
+                <input type="text" name="subject" value={form.subject} onChange={handleChange} placeholder="Job opportunity / Collaboration" style={{ width: '100%', background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: 8, padding: '0.65rem 0.9rem', color: 'var(--text)', fontSize: '0.875rem', outline: 'none' }} />
               </div>
 
               <div>
                 <label style={{ fontSize: '0.78rem', color: 'var(--sub)', display: 'block', marginBottom: '0.4rem' }}>Message</label>
-                <textarea placeholder="Your message..." rows={5} style={{ width: '100%', background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: 8, padding: '0.65rem 0.9rem', color: 'var(--text)', fontSize: '0.875rem', outline: 'none', resize: 'vertical', fontFamily: 'Inter, sans-serif' }} />
+                <textarea name="message" value={form.message} onChange={handleChange} placeholder="Your message..." rows={5} style={{ width: '100%', background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: 8, padding: '0.65rem 0.9rem', color: 'var(--text)', fontSize: '0.875rem', outline: 'none', resize: 'vertical', fontFamily: 'Inter, sans-serif' }} />
               </div>
 
-              <a href="mailto:selvanayagamabilasha@gmail.com" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, background: 'var(--violet)', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: 8, fontSize: '0.875rem', fontWeight: 600, fontFamily: 'Space Grotesk, sans-serif', textDecoration: 'none' }}>
+              <a href={mailtoLink} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, background: 'var(--violet)', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: 8, fontSize: '0.875rem', fontWeight: 600, fontFamily: 'Space Grotesk, sans-serif', textDecoration: 'none' }}>
                 <Send size={15} /> Send via Email
               </a>
             </div>
@@ -91,7 +94,6 @@ export default function Contact() {
 
         </div>
       </section>
-
     </main>
   );
 }
