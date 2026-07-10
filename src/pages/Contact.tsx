@@ -16,10 +16,10 @@ export default function Contact() {
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <p style={{ fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--violet)', marginBottom: '0.5rem' }}>Get In Touch</p>
           <h1 style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', fontWeight: 700, letterSpacing: '-0.03em', marginBottom: '1rem' }}>
-            Let's <span style={{ color: 'var(--violet2)' }}>Connect</span>
+            Available for <span style={{ color: 'var(--violet2)' }}>Developer Opportunities</span>
           </h1>
           <p style={{ color: 'var(--sub)', maxWidth: 480, margin: '0 auto', fontSize: '0.925rem', lineHeight: 1.8 }}>
-            Open to junior developer roles, internships & remote opportunities. Based in Jaffna, Sri Lanka.
+          I'm open to Junior Full Stack Developer roles, software engineering internships, and remote opportunities. Based in Jaffna, Sri Lanka.
           </p>
         </div>
       </section>
@@ -78,7 +78,7 @@ export default function Contact() {
 
               <div>
                 <label style={{ fontSize: '0.78rem', color: 'var(--sub)', display: 'block', marginBottom: '0.4rem' }}>Subject</label>
-                <input type="text" name="subject" value={form.subject} onChange={handleChange} placeholder="Job opportunity / Collaboration" style={{ width: '100%', background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: 8, padding: '0.65rem 0.9rem', color: 'var(--text)', fontSize: '0.875rem', outline: 'none' }} />
+                <input type="text" name="subject" value={form.subject} onChange={handleChange} placeholder="Job Opportunity | Internship | Collaboration" style={{ width: '100%', background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: 8, padding: '0.65rem 0.9rem', color: 'var(--text)', fontSize: '0.875rem', outline: 'none' }} />
               </div>
 
               <div>

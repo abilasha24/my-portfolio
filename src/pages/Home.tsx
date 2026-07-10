@@ -61,9 +61,7 @@ export default function Home() {
             color: 'var(--sub)', fontSize: '0.925rem',
             lineHeight: 1.8, marginBottom: '2rem', maxWidth: 500, margin: '0 auto 2rem',
           }}>
-            Building production-ready web apps with React, Next.js, PHP & Python.
-            Adding AI — from LLM agents to ML models — into real-world projects
-            from Jaffna, Sri Lanka.
+            Building scalable full-stack web applications with React, Next.js, PHP, and Python — integrating AI agents and machine learning solutions for real-world problems.
           </p>
 
           {/* Buttons */}
@@ -120,8 +118,9 @@ export default function Home() {
             borderTop: '1px solid var(--border)',
           }}>
            {[
-  { num: '5+', label: 'Projects Shipped' },
-  { num: '2', label: 'Degrees' },
+  { num: '5+', label: 'Projects Built' },
+  { num: '2+', label: 'Years Learning & Building' },
+  { num: '10+',label: 'Technologies Used'},
 ].map(s => (
               <div key={s.label}>
                 <div style={{
@@ -166,8 +165,8 @@ export default function Home() {
               { cat: 'Backend', skills: ['PHP', 'Node.js', 'Express', 'REST APIs', 'JWT Auth'] },
               { cat: 'Database', skills: ['MySQL', 'PostgreSQL', 'Prisma ORM', 'Neon DB'] },
               { cat: 'AI & ML', skills: ['Google ADK', 'Groq API', 'LLaMA 3.3', 'Scikit-learn', 'Streamlit'] },
-              { cat: 'Languages', skills: ['JavaScript', 'TypeScript', 'PHP', 'Python', 'SQL'] },
-              { cat: 'Tools', skills: ['Git', 'GitHub', 'Vercel', 'VS Code', 'Postman', 'Vite'] },
+              { cat: 'Programming Languages', skills: ['JavaScript', 'TypeScript', 'PHP', 'Python', 'SQL'] },
+              { cat: 'Tools', skills: ['Git', 'GitHub', 'Vercel', 'VS Code', 'Postman'] },
             ].map(({ cat, skills }) => (
               <div key={cat} style={{
                 background: 'var(--bg)', border: '1px solid var(--border)',

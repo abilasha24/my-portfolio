@@ -41,7 +41,7 @@ const projects = [
   {
     name: 'Personal Portfolio Website',
     date: '2026 · Personal Project',
-    desc: 'This portfolio — responsive dark-themed site with project showcase. Built with React, TypeScript, Tailwind CSS and Vite.',
+    desc: 'Designed and developed a responsive developer portfolio showcasing full-stack and AI projects using React, TypeScript, and Tailwind CSS.',
     tech: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
     github: 'https://github.com/abilasha24/my-portfolio',
     live: '',

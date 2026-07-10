@@ -16,7 +16,7 @@ export default function About() {
             fontSize: 'clamp(1.8rem, 4vw, 2.5rem)',
             fontWeight: 700, letterSpacing: '-0.03em', marginBottom: '1rem',
           }}>
-            Developer from <span style={{ color: 'var(--violet2)' }}>Jaffna</span>
+            Full Stack Developer based in <span style={{ color: 'var(--violet2)' }}>Jaffna, Sri Lanka</span>
           </h1>
           <p style={{ color: 'var(--sub)', maxWidth: 520, margin: '0 auto', fontSize: '0.925rem', lineHeight: 1.8 }}>
             Junior Full Stack Developer with a passion for building AI-integrated web applications.
@@ -42,8 +42,7 @@ export default function About() {
               University (ICBT Campus, Jaffna) and an HND in Computing with Merit Pass.
             </p>
             <p style={{ color: 'var(--sub)', fontSize: '0.9rem', lineHeight: 1.85 }}>
-              My long-term goal is to become a Full Stack AI-integrated Developer by 2030,
-              bridging modern web development with intelligent systems.
+              I am focused on combining full-stack engineering with AI technologies to create intelligent, real-world applications.
             </p>
 
             {/* Pills */}
@@ -69,7 +68,7 @@ export default function About() {
                 { icon: <MapPin size={15} />, label: 'Location', value: 'Jaffna, Sri Lanka' },
                 { icon: <Mail size={15} />, label: 'Email', value: 'selvanayagamabilasha@gmail.com', link: 'mailto:selvanayagamabilasha@gmail.com' },
                 { icon: <GraduationCap size={15} />, label: 'Degree', value: 'B.Sc. (Hons) Software Engineering' },
-                { icon: <GraduationCap size={15} />, label: 'University', value: 'Cardiff Metropolitan (ICBT)' },
+                { icon: <GraduationCap size={15} />, label: 'University', value: 'Cardiff Metropolitan University (ICBT Campus Jaffna)' },
                 { label: '🌐', value: 'Tamil · English · Sinhala', plainLabel: 'Languages' },
                 { label: '💼', value: 'Open to opportunities', plainLabel: 'Status', green: true },
               ].map((row, i) => (
@@ -110,7 +109,7 @@ export default function About() {
           {/* Education list */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2.5rem' }}>
             {[
-              { deg: 'B.Sc. (Hons) Software Engineering', school: 'ICBT Campus – Cardiff Metropolitan University, Jaffna', year: 'Jun 2025 – Jun 2026' },
+              { deg: 'B.Sc. (Hons) Software Engineering', school: 'ICBT Campus – Cardiff Metropolitan University, Jaffna', year: ' 2025 –  2026 (Expected Completion)' },
               { deg: 'Higher Diploma in Computing & Software Engineering', school: 'ICBT Campus – Cardiff Metropolitan University · Merit Pass', year: 'Mar 2023 – Nov 2024' },
             ].map((e, i) => (
               <div key={i} style={{
@@ -144,13 +143,11 @@ export default function About() {
             {[
               { name: ' Higher Diploma in Computing & Software Engineering', org: 'ICBT Campus (Cardiff Met), Nov 2024' },
               { name: 'AI Agents Intensive Vibe Coding Course', org: 'Kaggle & Google · Jun 2026' },
-              { name: 'AI Agents Intensive Course', org: 'Kaggle & Google · Nov 2025' },
               { name: 'Advanced Python Programming', org: 'i-Tech Academy · May 2025' },
               { name: 'Python Certificate', org: 'GUVI (HCL & Google) · May 2025' },
               { name: 'Diploma in IT & Artificial Intelligence', org: 'CASED Institute · 2025' },
               { name: 'Workshop on NLP & Computer Vision', org: 'ICBT Campus Jaffna · May 2026' },
               { name: 'Advanced Graphic Design', org: 'Orinsto Institute · Jun 2025' },
-              { name: ' Microsoft Office', org: ' DMI Computer Education, Jan 2020' },
             ].map((c, i) => (
               <div key={i} style={{
                 background: 'var(--card)', border: '1px solid var(--border)',
