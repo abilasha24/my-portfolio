@@ -1,5 +1,6 @@
 import { Github, ExternalLink } from 'lucide-react';
 import { FarmerIcon, ShopIcon, FitnessIcon, MLIcon, PortfolioIcon } from '../components/ProjectIcons';
+import Reveal from '../components/Reveal';
 
 const projects = [
   {
@@ -75,6 +76,7 @@ export default function Projects() {
     <main style={{ paddingTop: 80, minHeight: '100vh' }}>
 
       <section style={{ padding: '4rem 1.5rem 2rem', textAlign: 'center' }}>
+        <Reveal>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <p style={{ fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--violet)', marginBottom: '0.5rem' }}>
             Work
@@ -86,51 +88,52 @@ export default function Projects() {
             A collection of projects I have built — from full stack web apps to AI-powered agents.
           </p>
         </div>
+        </Reveal>
       </section>
 
       <section style={{ padding: '2rem 1.5rem 5rem' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
 
-          {projects.map((p) => (
-            <div
-              key={p.name}
-              style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14, padding: '1.5rem', display: 'grid', gridTemplateColumns: '64px 1fr auto', gap: '1.1rem', alignItems: 'start' }}
-              onMouseOver={e => (e.currentTarget.style.borderColor = 'rgba(139,92,246,0.4)')}
-              onMouseOut={e => (e.currentTarget.style.borderColor = 'var(--border)')}
-            >
-              <div style={{ width: 56, height: 56, flexShrink: 0 }}>
-                <p.icon />
-              </div>
+          {projects.map((p, i) => (
+            <Reveal key={p.name} delay={i * 100}>
+              <div
+                className="hover-card"
+                style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14, padding: '1.5rem', display: 'grid', gridTemplateColumns: '64px 1fr auto', gap: '1.1rem', alignItems: 'start' }}
+              >
+                <div style={{ width: 56, height: 56, flexShrink: 0 }}>
+                  <p.icon />
+                </div>
 
-              <div>
-                <div style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: '1rem', fontWeight: 700, marginBottom: '0.2rem' }}>
-                  {p.name}
+                <div>
+                  <div style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: '1rem', fontWeight: 700, marginBottom: '0.2rem' }}>
+                    {p.name}
+                  </div>
+                  <div style={{ fontSize: '0.72rem', color: 'var(--sub)', marginBottom: '0.6rem' }}>
+                    {p.date}
+                  </div>
+                  <p style={{ fontSize: '0.865rem', color: 'var(--sub)', lineHeight: 1.75, marginBottom: '0.9rem' }}>
+                    {p.desc}
+                  </p>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem' }}>
+                    {p.tech.map(t => (
+                      <span key={t} className="hover-badge" style={techBadge}>{t}</span>
+                    ))}
+                  </div>
                 </div>
-                <div style={{ fontSize: '0.72rem', color: 'var(--sub)', marginBottom: '0.6rem' }}>
-                  {p.date}
-                </div>
-                <p style={{ fontSize: '0.865rem', color: 'var(--sub)', lineHeight: 1.75, marginBottom: '0.9rem' }}>
-                  {p.desc}
-                </p>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem' }}>
-                  {p.tech.map(t => (
-                    <span key={t} style={techBadge}>{t}</span>
-                  ))}
-                </div>
-              </div>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', alignItems: 'flex-end' }}>
-                <a href={p.github} target="_blank" rel="noreferrer" style={linkStyle}>
-                  <Github size={13} /> GitHub
-                </a>
-                {p.live !== '' && (
-                  <a href={p.live} target="_blank" rel="noreferrer" style={linkStyle}>
-                    <ExternalLink size={13} /> Live
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', alignItems: 'flex-end' }}>
+                  <a href={p.github} target="_blank" rel="noreferrer" className="hover-btn" style={linkStyle}>
+                    <Github size={13} /> GitHub
                   </a>
-                )}
-              </div>
+                  {p.live !== '' && (
+                    <a href={p.live} target="_blank" rel="noreferrer" className="hover-btn" style={linkStyle}>
+                      <ExternalLink size={13} /> Live
+                    </a>
+                  )}
+                </div>
 
-            </div>
+              </div>
+            </Reveal>
           ))}
 
         </div>

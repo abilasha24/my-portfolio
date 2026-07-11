@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
+import Reveal from '../components/Reveal';
 
 export default function Home() {
   return (
@@ -11,10 +12,11 @@ export default function Home() {
         justifyContent: 'center', textAlign: 'center',
         padding: '100px 1.5rem 60px',
       }}>
+        <Reveal>
         <div style={{ maxWidth: 640 }}>
 
           {/* Avatar */}
-          <div style={{
+          <div className="avatar-pulse" style={{
             width: 100, height: 100, borderRadius: '50%',
             background: 'linear-gradient(135deg, #8B5CF6, #4C1D95)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -66,7 +68,7 @@ export default function Home() {
 
           {/* Buttons */}
           <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link to="/projects" style={{
+            <Link to="/projects" className="hover-btn" style={{
               display: 'inline-flex', alignItems: 'center', gap: 6,
               background: 'var(--violet)', color: '#fff',
               padding: '0.7rem 1.5rem', borderRadius: 8,
@@ -76,7 +78,7 @@ export default function Home() {
               View Projects <ArrowRight size={15} />
             </Link>
 
-            <Link to="/contact" style={{
+            <Link to="/contact" className="hover-btn" style={{
               display: 'inline-flex', alignItems: 'center', gap: 6,
               background: 'transparent', color: 'var(--text)',
               border: '1px solid var(--border)',
@@ -86,8 +88,7 @@ export default function Home() {
             }}>
               Contact Me
             </Link>
-
-            </div>
+          </div>
 
           {/* Social links */}
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '1.75rem' }}>
@@ -117,11 +118,11 @@ export default function Home() {
             marginTop: '3rem', paddingTop: '2rem',
             borderTop: '1px solid var(--border)',
           }}>
-           {[
-  { num: '5+', label: 'Projects Built' },
-  { num: '2+', label: 'Years Learning & Building' },
-  { num: '10+',label: 'Technologies Used'},
-].map(s => (
+            {[
+              { num: '5+', label: 'Projects Built' },
+              { num: '2+', label: 'Years Learning & Building' },
+              { num: '10+', label: 'Technologies Used' },
+            ].map(s => (
               <div key={s.label}>
                 <div style={{
                   fontFamily: 'Space Grotesk, sans-serif',
@@ -133,6 +134,7 @@ export default function Home() {
           </div>
 
         </div>
+        </Reveal>
       </section>
 
       {/* SKILLS PREVIEW */}
@@ -141,6 +143,7 @@ export default function Home() {
         background: 'var(--card)',
         borderTop: '1px solid var(--border)',
       }}>
+        <Reveal>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <p style={{
             textAlign: 'center', fontSize: '0.72rem', fontWeight: 600,
@@ -167,29 +170,32 @@ export default function Home() {
               { cat: 'AI & ML', skills: ['Google ADK', 'Groq API', 'LLaMA 3.3', 'Scikit-learn', 'Streamlit'] },
               { cat: 'Programming Languages', skills: ['JavaScript', 'TypeScript', 'PHP', 'Python', 'SQL'] },
               { cat: 'Tools', skills: ['Git', 'GitHub', 'Vercel', 'VS Code', 'Postman'] },
-            ].map(({ cat, skills }) => (
-              <div key={cat} style={{
-                background: 'var(--bg)', border: '1px solid var(--border)',
-                borderRadius: 12, padding: '1.15rem',
-              }}>
-                <p style={{
-                  fontSize: '0.72rem', fontWeight: 600,
-                  letterSpacing: '0.08em', textTransform: 'uppercase',
-                  color: 'var(--violet)', marginBottom: '0.85rem',
-                }}>{cat}</p>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
-                  {skills.map(s => (
-                    <span key={s} style={{
-                      background: 'var(--card2)', color: 'var(--sub)',
-                      fontSize: '0.78rem', padding: '0.25rem 0.65rem',
-                      borderRadius: 6, border: '1px solid var(--border)',
-                    }}>{s}</span>
-                  ))}
+            ].map(({ cat, skills }, i) => (
+              <Reveal key={cat} delay={i * 100}>
+                <div className="hover-card" style={{
+                  background: 'var(--bg)', border: '1px solid var(--border)',
+                  borderRadius: 12, padding: '1.15rem',
+                }}>
+                  <p style={{
+                    fontSize: '0.72rem', fontWeight: 600,
+                    letterSpacing: '0.08em', textTransform: 'uppercase',
+                    color: 'var(--violet)', marginBottom: '0.85rem',
+                  }}>{cat}</p>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+                    {skills.map(s => (
+                      <span key={s} className="hover-badge" style={{
+                        background: 'var(--card2)', color: 'var(--sub)',
+                        fontSize: '0.78rem', padding: '0.25rem 0.65rem',
+                        borderRadius: 6, border: '1px solid var(--border)',
+                      }}>{s}</span>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
+        </Reveal>
       </section>
 
     </main>
