@@ -1,323 +1,184 @@
-'use client';
-
-import {
-  GraduationCap,
-  Award,
-  MapPin,
-  Mail,
-} from 'lucide-react';
+import { MapPin, Mail, GraduationCap, Award } from 'lucide-react';
+import Reveal from '../components/Reveal';
 
 export default function About() {
   return (
-    <section id="about" className="py-20">
-      <div className="container mx-auto px-6">
+    <main style={{ paddingTop: 80, minHeight: '100vh' }}>
 
-        {/* Header */}
-        <div className="text-center mb-16">
-          <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-3">
-            About Me
-          </p>
-
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Junior Software Engineer · Full-Stack & AI Developer
-            <span className="block text-muted-foreground text-2xl md:text-3xl mt-2">
-              Based in Jaffna, Sri Lanka
-            </span>
-          </h2>
-
-          <p className="max-w-3xl mx-auto text-lg text-muted-foreground">
-            B.Sc. (Hons) Software Engineering graduate focused on building
-            full-stack web applications and AI-powered solutions.
+      {/* HEADER */}
+      <section style={{ padding: '4rem 1.5rem 2rem', textAlign: 'center' }}>
+        <Reveal>
+        <div style={{ maxWidth: 900, margin: '0 auto' }}>
+          <p style={{
+            fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.1em',
+            textTransform: 'uppercase', color: 'var(--violet)', marginBottom: '0.5rem',
+          }}>About Me</p>
+          <h1 style={{
+            fontFamily: 'Space Grotesk, sans-serif',
+            fontSize: 'clamp(1.8rem, 4vw, 2.5rem)',
+            fontWeight: 700, letterSpacing: '-0.03em', marginBottom: '1rem',
+          }}>
+            Junior Software Engineer · Full-Stack & AI Developer based in <span style={{ color: 'var(--violet2)' }}>Jaffna, Sri Lanka</span>
+          </h1>
+          <p style={{ color: 'var(--sub)', maxWidth: 520, margin: '0 auto', fontSize: '0.925rem', lineHeight: 1.8 }}>
+            B.Sc. (Hons) Software Engineering graduate focused on building full-stack web applications and AI-powered solutions.
           </p>
         </div>
+        </Reveal>
+      </section>
 
-        {/* Who I Am */}
-        <div className="grid md:grid-cols-2 gap-12 items-start mb-20">
+      {/* ABOUT GRID */}
+      <section style={{ padding: '2rem 1.5rem', background: 'var(--card)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
+        <div style={{ maxWidth: 900, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2.5rem' }}>
 
+          {/* Left */}
+          <Reveal delay={0}>
           <div>
-            <h3 className="text-2xl font-bold mb-6">
+            <h2 style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem' }}>
               Who I Am
-            </h3>
+            </h2>
+            <p style={{ color: 'var(--sub)', fontSize: '0.9rem', lineHeight: 1.85, marginBottom: '1rem' }}>
+              I'm a Junior Software Engineer focused on building full-stack web applications using React, Next.js, TypeScript, Node.js, Express.js, and PostgreSQL.
+              I also build AI-integrated and machine-learning applications using Python, Google ADK, LLM APIs, and Scikit-learn.
+            </p>
+            <p style={{ color: 'var(--sub)', fontSize: '0.9rem', lineHeight: 1.85, marginBottom: '1rem' }}>
+              I hold a B.Sc. (Hons) in Software Engineering from Cardiff Metropolitan University through ICBT Campus Jaffna, awarded in May 2026.
+              I also completed a Higher Diploma in Computing & Software Engineering with Merit Pass in November 2024.
+            </p>
+            <p style={{ color: 'var(--sub)', fontSize: '0.9rem', lineHeight: 1.85 }}>
+              My goal is to combine full-stack engineering and AI technologies to build practical, intelligent, and real-world software solutions.
+            </p>
 
-            <div className="space-y-5 text-muted-foreground leading-relaxed">
-
-  <p>
-    I'm a{' '}
-    <strong className="text-foreground">
-      Junior Software Engineer
-    </strong>{' '}
-    focused on building full-stack web applications using React,
-    Next.js, TypeScript, Node.js, Express.js, and PostgreSQL.
-  </p>
-
-  <p>
-    I also build{' '}
-    <strong className="text-foreground">
-      AI-integrated and machine-learning applications
-    </strong>{' '}
-    using Python, Google ADK, LLM APIs, and Scikit-learn.
-  </p>
-
-  <p>
-    I hold a{' '}
-    <strong className="text-foreground">
-      B.Sc. (Hons) in Software Engineering
-    </strong>{' '}
-    from Cardiff Metropolitan University through ICBT Campus Jaffna,
-    awarded in May 2026. I also completed a Higher Diploma in
-    Computing & Software Engineering with Merit Pass in November 2024.
-  </p>
-
-  <p>
-    My goal is to combine{' '}
-    <strong className="text-foreground">
-      full-stack engineering and AI technologies
-    </strong>{' '}
-    to build practical, intelligent, and real-world software solutions.
-  </p>
-
-</div>
-
-            {/* Technology Pills */}
-            <div className="flex flex-wrap gap-3 mt-8">
-              {[
-                'React',
-                'Next.js',
-                'TypeScript',
-                'Node.js',
-                'Python',
-                'PostgreSQL',
-                'Google ADK',
-                'Tailwind CSS',
-              ].map((tech) => (
-                <span
-                  key={tech}
-                  className="px-4 py-2 rounded-full border text-sm font-medium"
-                >
-                  {tech}
-                </span>
+            {/* Pills */}
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '1.25rem' }}>
+              {['React', 'TypeScript', 'Next.js', 'PHP', 'Python', 'PostgreSQL', 'Google ADK', 'Tailwind CSS'].map((s, i) => (
+                <span key={s} className="hover-badge" style={{
+                  background: 'rgba(139,92,246,0.1)',
+                  border: '1px solid rgba(139,92,246,0.2)',
+                  color: 'var(--violet2)', fontSize: '0.78rem',
+                  padding: '0.3rem 0.75rem', borderRadius: 99,
+                  transitionDelay: `${i * 40}ms`,
+                }}>{s}</span>
               ))}
             </div>
           </div>
+          </Reveal>
 
-          {/* Quick Info */}
-          <div className="rounded-2xl border p-6 md:p-8">
-            <h3 className="text-2xl font-bold mb-6">
+          {/* Right — Info */}
+          <Reveal delay={150}>
+          <div>
+            <h2 style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem' }}>
               Quick Info
-            </h3>
-
-            <div className="space-y-5">
-
-              <div className="flex items-start gap-4">
-                <MapPin className="w-5 h-5 mt-1 text-primary" />
-                <div>
-                  <p className="text-sm text-muted-foreground">
-                    Location
-                  </p>
-                  <p className="font-medium">
-                    Jaffna, Sri Lanka
-                  </p>
+            </h2>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              {[
+                { icon: <MapPin size={15} />, label: 'Location', value: 'Jaffna, Sri Lanka' },
+                { icon: <Mail size={15} />, label: 'Email', value: 'selvanayagamabilasha@gmail.com', link: 'mailto:selvanayagamabilasha@gmail.com' },
+                { icon: <GraduationCap size={15} />, label: 'Degree', value: 'B.Sc. (Hons) Software Engineering' },
+                { icon: <GraduationCap size={15} />, label: 'University', value: 'Cardiff Metropolitan University (ICBT Campus Jaffna)' },
+                { label: '🌐', value: 'Tamil · English · Sinhala', plainLabel: 'Languages' },
+                { label: '💼', value: 'Open to Junior Software Engineering Opportunities', plainLabel: 'Status', green: true },
+              ].map((row, i) => (
+                <div key={i} style={{
+                  display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                  padding: '0.7rem 0', borderBottom: '1px solid var(--border)',
+                  fontSize: '0.85rem',
+                }}>
+                  <span style={{ color: 'var(--sub)', display: 'flex', alignItems: 'center', gap: 6 }}>
+                    {row.icon || row.label} {row.plainLabel || row.label}
+                  </span>
+                  {row.link ? (
+                    <a href={row.link} style={{ color: 'var(--violet2)', fontWeight: 500, textAlign: 'right' }}>{row.value}</a>
+                  ) : (
+                    <span style={{ color: row.green ? 'var(--green)' : 'var(--text)', fontWeight: 500, textAlign: 'right' }}>{row.value}</span>
+                  )}
                 </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <Mail className="w-5 h-5 mt-1 text-primary" />
-                <div>
-                  <p className="text-sm text-muted-foreground">
-                    Email
-                  </p>
-                  <a
-                    href="mailto:selvanayagamabilasha@gmail.com"
-                    className="font-medium hover:text-primary transition-colors"
-                  >
-                    selvanayagamabilasha@gmail.com
-                  </a>
-                </div>
-              </div>
-
-              <div>
-                <p className="text-sm text-muted-foreground">
-                  Degree
-                </p>
-                <p className="font-medium">
-                  B.Sc. (Hons) Software Engineering
-                </p>
-              </div>
-
-              <div>
-                <p className="text-sm text-muted-foreground">
-                  University
-                </p>
-                <p className="font-medium">
-                  Cardiff Metropolitan University · ICBT Campus Jaffna
-                </p>
-              </div>
-
-              <div>
-                <p className="text-sm text-muted-foreground">
-                  Languages
-                </p>
-                <p className="font-medium">
-                  Tamil · English · Sinhala
-                </p>
-              </div>
-
-              <div>
-                <p className="text-sm text-muted-foreground">
-                  Status
-                </p>
-                <p className="font-medium text-green-600">
-                  Open to Junior Software Engineering Opportunities
-                </p>
-              </div>
-
+              ))}
             </div>
+          </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* EDUCATION */}
+      <section style={{ padding: '4rem 1.5rem' }}>
+        <div style={{ maxWidth: 900, margin: '0 auto' }}>
+          <Reveal>
+          <div>
+            <p style={{
+              fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.1em',
+              textTransform: 'uppercase', color: 'var(--violet)', marginBottom: '0.5rem',
+            }}>Background</p>
+            <h2 style={{
+              fontFamily: 'Space Grotesk, sans-serif', fontSize: 'clamp(1.4rem, 3vw, 1.9rem)',
+              fontWeight: 700, marginBottom: '2rem', letterSpacing: '-0.02em',
+            }}>
+              Education & <span style={{ color: 'var(--violet2)' }}>Certifications</span>
+            </h2>
+          </div>
+          </Reveal>
+
+          {/* Education list */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2.5rem' }}>
+            {[
+              { deg: 'B.Sc. (Hons) Software Engineering [Second Class Division One]', school: 'ICBT Campus, Jaffna · Cardiff Metropolitan University', year: ' Awarded: May 2026' },
+              { deg: 'Higher Diploma in Computing & Software Engineering', school: 'ICBT Campus, Jaffna · Merit Pass', year: 'Mar 2023 – Nov 2024' },
+            ].map((e, i) => (
+              <Reveal key={i} delay={i * 100}>
+                <div className="hover-card" style={{
+                  background: 'var(--card)', border: '1px solid var(--border)',
+                  borderRadius: 12, padding: '1.15rem 1.35rem',
+                  display: 'flex', gap: '1rem', alignItems: 'flex-start',
+                }}>
+                  <div style={{
+                    width: 10, height: 10, borderRadius: '50%',
+                    background: 'var(--violet)', flexShrink: 0, marginTop: 5,
+                  }} />
+                  <div>
+                    <div style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: '0.9rem', fontWeight: 700 }}>{e.deg}</div>
+                    <div style={{ fontSize: '0.82rem', color: 'var(--violet2)', marginTop: 3 }}>{e.school}</div>
+                    <div style={{ fontSize: '0.75rem', color: 'var(--sub)', marginTop: 3 }}>{e.year}</div>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          {/* Certifications */}
+          <Reveal>
+          <h3 style={{
+            fontFamily: 'Space Grotesk, sans-serif', fontSize: '1rem',
+            fontWeight: 700, marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: 8,
+          }}>
+            <Award size={18} color="var(--violet2)" /> Certifications & Workshops
+          </h3>
+          </Reveal>
+          <div style={{
+            display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '0.65rem',
+          }}>
+            {[
+              { name: 'AI Agents Intensive Vibe Coding Course', org: 'Kaggle & Google · Jun 2026' },
+              { name: 'Advanced Python Programming', org: 'i-Tech Academy · May 2025' },
+              { name: 'Python Certificate', org: 'GUVI (HCL & Google) · May 2025' },
+              { name: 'Diploma in IT & Artificial Intelligence', org: 'CASED Institute · 2025' },
+              { name: 'Workshop on NLP & Computer Vision', org: 'ICBT Campus Jaffna · May 2026' },
+              { name: 'IoT & Smart Solutions Workshop', org: 'ICBT Campus Jaffna · Aug 2026' },
+              { name: 'AI Master Class', org: 'LP Campus . Jul 2024'}
+            ].map((c, i) => (
+              <Reveal key={i} delay={i * 80}>
+                <div className="hover-card" style={{
+                  background: 'var(--card)', border: '1px solid var(--border)',
+                  borderRadius: 10, padding: '0.85rem 1rem',
+                }}>
+                  <div style={{ fontSize: '0.82rem', color: 'var(--text)', fontWeight: 500 }}>{c.name}</div>
+                  <div style={{ fontSize: '0.72rem', color: 'var(--sub)', marginTop: 3 }}>{c.org}</div>
+                </div>
+              </Reveal>
+            ))}
           </div>
         </div>
+      </section>
 
-        {/* Education */}
-        <div className="mb-20">
-
-          <div className="flex items-center gap-3 mb-8">
-            <GraduationCap className="w-7 h-7 text-primary" />
-
-            <h3 className="text-2xl font-bold">
-              Education
-            </h3>
-          </div>
-
-          <div className="space-y-6">
-
-            {/* BSc */}
-            <div className="rounded-2xl border p-6">
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-
-                <div>
-                  <h4 className="text-xl font-semibold">
-                    B.Sc. (Hons) Software Engineering
-                  </h4>
-
-                  <p className="text-muted-foreground mt-2">
-                    ICBT Campus, Jaffna · Cardiff Metropolitan University
-                  </p>
-
-                  <p className="text-sm text-muted-foreground mt-2">
-                    Second Class Division One
-                  </p>
-                </div>
-
-                <span className="text-sm font-medium text-primary whitespace-nowrap">
-                  Awarded: May 2026
-                </span>
-
-              </div>
-            </div>
-
-            {/* Higher Diploma */}
-            <div className="rounded-2xl border p-6">
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-
-                <div>
-                  <h4 className="text-xl font-semibold">
-                    Higher Diploma in Computing & Software Engineering
-                  </h4>
-
-                  <p className="text-muted-foreground mt-2">
-                    ICBT Campus, Jaffna · Merit Pass
-                  </p>
-                </div>
-
-                <span className="text-sm font-medium text-primary whitespace-nowrap">
-                  Mar 2023 – Nov 2024
-                </span>
-
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        {/* Certifications & Workshops */}
-        <div>
-
-          <div className="flex items-center gap-3 mb-8">
-            <Award className="w-7 h-7 text-primary" />
-
-            <h3 className="text-2xl font-bold">
-              Certifications & Workshops
-            </h3>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-5">
-
-            <div className="rounded-2xl border p-6">
-              <h4 className="font-semibold">
-                AI Agents Intensive Vibe Coding Course
-              </h4>
-              <p className="text-sm text-muted-foreground mt-2">
-                Kaggle & Google · Jun 2026
-              </p>
-            </div>
-
-            <div className="rounded-2xl border p-6">
-              <h4 className="font-semibold">
-                Advanced Python Programming
-              </h4>
-              <p className="text-sm text-muted-foreground mt-2">
-                i-Tech Academy · May 2025
-              </p>
-            </div>
-
-            <div className="rounded-2xl border p-6">
-              <h4 className="font-semibold">
-                Certificate of Completion in Python
-              </h4>
-              <p className="text-sm text-muted-foreground mt-2">
-                GUVI · May 2025
-              </p>
-            </div>
-
-            <div className="rounded-2xl border p-6">
-              <h4 className="font-semibold">
-                Diploma in IT & Artificial Intelligence
-              </h4>
-              <p className="text-sm text-muted-foreground mt-2">
-                CASED Institute · 2025
-              </p>
-            </div>
-
-            <div className="rounded-2xl border p-6">
-              <h4 className="font-semibold">
-                NLP & Computer Vision Workshop
-              </h4>
-              <p className="text-sm text-muted-foreground mt-2">
-                ICBT Campus Jaffna · May 2026
-              </p>
-            </div>
-
-            <div className="rounded-2xl border p-6">
-              <h4 className="font-semibold">
-                IoT & Smart Solutions Workshop
-              </h4>
-              <p className="text-sm text-muted-foreground mt-2">
-                ICBT Campus Jaffna · Aug 2026
-              </p>
-            </div>
-
-
-            <div className="rounded-2xl border p-6">
-              <h4 className="font-semibold">
-                AI Master Class
-              </h4>
-              <p className="text-sm text-muted-foreground mt-2">
-                LP Campus · Jul 2024
-              </p>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </section>
+    </main>
   );
 }
