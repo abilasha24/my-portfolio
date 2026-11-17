@@ -35,6 +35,22 @@ const quickInfo = [
   },
 ];
 
+const experience = [
+  {
+    role: 'Artificial Intelligence Intern',
+    company: 'DecodeLabs',
+    type: 'Remote Internship',
+    location: 'India · Remote',
+    period: 'September 2026 – October 2026',
+    responsibilities: [
+      'Completed a remote virtual internship in Artificial Intelligence.',
+      'Developed a Python-based rule-based chatbot as part of the internship project.',
+      'Practiced Python programming, debugging and software testing.',
+      'Worked on project implementation and documentation.',
+    ],
+    skills: ['Python', 'Debugging', 'Software Testing'],
+  },
+];
 const education = [
   {
     degree: 'B.Sc. (Hons) Software Engineering',
@@ -215,6 +231,67 @@ export default function About() {
               </div>
             </div>
           </Reveal>
+
+        </div>
+      </section>
+
+            {/* EXPERIENCE */}
+      <section className="about-education-section">
+        <div className="about-container">
+
+          <Reveal>
+            <div className="about-section-heading">
+              <p className="about-eyebrow">PROFESSIONAL EXPERIENCE</p>
+              <h2>
+                Internship <span>Experience</span>
+              </h2>
+            </div>
+          </Reveal>
+
+          <div className="about-education-list">
+            {experience.map((item, index) => (
+              <Reveal key={item.role} delay={index * 100}>
+                <article className="about-education-card">
+
+                  <div className="about-education-icon">
+                    <Briefcase size={23} />
+                  </div>
+
+                  <div className="about-education-content">
+                    <h3>{item.role}</h3>
+
+                    <p className="about-education-institution">
+                      {item.company} · {item.type}
+                    </p>
+
+                    <p className="about-education-campus">
+                      {item.location}
+                    </p>
+
+                    <div className="about-education-meta">
+                      <span>Completed Internship</span>
+                      <span>{item.period}</span>
+                    </div>
+
+                    <ul className="about-experience-points">
+                      {item.responsibilities.map((responsibility) => (
+                        <li key={responsibility}>
+                          {responsibility}
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="about-experience-skills">
+                      {item.skills.map((skill) => (
+                        <span key={skill}>{skill}</span>
+                      ))}
+                    </div>
+
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
 
         </div>
       </section>
