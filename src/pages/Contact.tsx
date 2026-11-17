@@ -1,114 +1,223 @@
-import { useState } from 'react';
-import { Mail, Github, Linkedin, MapPin, Send } from 'lucide-react';
+
+import { useState, type ChangeEvent, type FormEvent } from 'react';
+import {
+  Mail,
+  Github,
+  Linkedin,
+  MapPin,
+  Send,
+  ArrowUpRight,
+} from 'lucide-react';
 import Reveal from '../components/Reveal';
+import './Contact.css';
+
+type ContactForm = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
+  const [form, setForm] = useState<ContactForm>({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setForm((previous) => ({
+      ...previous,
+      [e.target.name]: e.target.value,
+    }));
   };
 
-  const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=selvanayagamabilasha@gmail.com&su=${encodeURIComponent(form.subject || 'Job opportunity / Collaboration')}&body=${encodeURIComponent(form.message + '\n\n---\nFrom: ' + (form.name || 'N/A') + '\nEmail: ' + (form.email || 'N/A'))}`;
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const subject =
+      form.subject.trim() || 'Job Opportunity / Collaboration';
+
+    const body = `${form.message}
+
+---
+From: ${form.name}
+Email: ${form.email}`;
+
+    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=selvanayagamabilasha@gmail.com&su=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+
+    window.open(gmailLink, '_blank', 'noopener,noreferrer');
+  };
 
   const contactCards = [
     {
       href: 'mailto:selvanayagamabilasha@gmail.com',
-      external: false,
-      icon: <Mail size={18} />,
+      icon: <Mail size={19} />,
       label: 'Email',
       value: 'selvanayagamabilasha@gmail.com',
     },
     {
       href: 'https://www.linkedin.com/in/abilashaselvanayakam2k06',
-      external: true,
-      icon: <Linkedin size={18} />,
+      icon: <Linkedin size={19} />,
       label: 'LinkedIn',
       value: 'abilashaselvanayakam2k06',
     },
     {
       href: 'https://github.com/abilasha24',
-      external: true,
-      icon: <Github size={18} />,
+      icon: <Github size={19} />,
       label: 'GitHub',
       value: 'abilasha24',
     },
   ];
 
   return (
-    <main style={{ paddingTop: 80, minHeight: '100vh' }}>
-      <section style={{ padding: '4rem 1.5rem 2rem', textAlign: 'center' }}>
+    <main className="contact-page">
+      <section className="contact-header">
         <Reveal>
-        <div style={{ maxWidth: 900, margin: '0 auto' }}>
-          <p style={{ fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--violet)', marginBottom: '0.5rem' }}>Get In Touch</p>
-          <h1 style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', fontWeight: 700, letterSpacing: '-0.03em', marginBottom: '1rem' }}>
-            Open to <span style={{ color: 'var(--violet2)' }}>Junior Software Engineering Opportunities</span>
-          </h1>
-          <p style={{ color: 'var(--sub)', maxWidth: 480, margin: '0 auto', fontSize: '0.925rem', lineHeight: 1.8 }}>
-            I'm open to Junior Software Engineer, Junior Full-Stack Developer, and AI-focused software development opportunities. Based in Jaffna, Sri Lanka.
-          </p>
-        </div>
+          <div className="contact-header-content">
+            <p className="section-eyebrow">GET IN TOUCH</p>
+
+            <h1>
+              Let's Connect
+              <br />
+              <span>I'm Open to Opportunities</span>
+            </h1>
+
+            <p className="contact-intro">
+              I'm a Software Engineering graduate interested in entry-level
+              software development, Python development, and AI-focused
+              opportunities. Feel free to contact me about jobs, internships,
+              or collaborations.
+            </p>
+          </div>
         </Reveal>
       </section>
 
-      <section style={{ padding: '2rem 1.5rem 5rem' }}>
-        <div style={{ maxWidth: 700, margin: '0 auto' }}>
+      <section className="contact-content">
+        <div className="contact-container">
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.75rem', marginBottom: '3rem' }}>
-            {contactCards.map((c, i) => (
-              <Reveal key={c.label} delay={i * 100}>
-                <a href={c.href} target={c.external ? '_blank' : undefined} rel={c.external ? 'noreferrer' : undefined} style={{ textDecoration: 'none' }}>
-                  <div className="hover-card" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, padding: '1.15rem 1.25rem' }}>
-                    <div style={{ color: 'var(--violet2)', marginBottom: '0.5rem' }}>{c.icon}</div>
-                    <div style={{ fontSize: '0.72rem', color: 'var(--sub)', marginBottom: '0.2rem', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 600 }}>{c.label}</div>
-                    <span style={{ fontSize: '0.82rem', color: 'var(--text)', fontWeight: 500, wordBreak: 'break-all' }}>{c.value}</span>
+          <div className="contact-cards">
+            {contactCards.map((card, index) => (
+              <Reveal key={card.label} delay={index * 100}>
+                <a
+                  href={card.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-card hover-card"
+                >
+                  <div className="contact-card-icon">{card.icon}</div>
+
+                  <div className="contact-card-label">{card.label}</div>
+
+                  <div className="contact-card-value">
+                    {card.value}
+                    <ArrowUpRight size={14} />
                   </div>
                 </a>
               </Reveal>
             ))}
 
             <Reveal delay={300}>
-              <div className="hover-card" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, padding: '1.15rem 1.25rem' }}>
-                <div style={{ color: 'var(--violet2)', marginBottom: '0.5rem' }}><MapPin size={18} /></div>
-                <div style={{ fontSize: '0.72rem', color: 'var(--sub)', marginBottom: '0.2rem', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 600 }}>Location</div>
-                <span style={{ fontSize: '0.82rem', color: 'var(--text)', fontWeight: 500 }}>Jaffna, Sri Lanka</span>
+              <div className="contact-card location-card hover-card">
+                <div className="contact-card-icon">
+                  <MapPin size={19} />
+                </div>
+
+                <div className="contact-card-label">Location</div>
+
+                <div className="contact-card-value">
+                  Jaffna, Sri Lanka
+                </div>
               </div>
             </Reveal>
           </div>
 
           <Reveal delay={150}>
-          <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14, padding: '2rem' }}>
-            <h2 style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: '1.1rem', fontWeight: 700, marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: 8 }}>
-              <Send size={17} color="var(--violet2)" /> Send a Message
-            </h2>
-
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                <div>
-                  <label style={{ fontSize: '0.78rem', color: 'var(--sub)', display: 'block', marginBottom: '0.4rem' }}>Name</label>
-                  <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="Your name" style={{ width: '100%', background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: 8, padding: '0.65rem 0.9rem', color: 'var(--text)', fontSize: '0.875rem', outline: 'none' }} />
+            <div className="contact-form-card">
+              <div className="contact-form-heading">
+                <div className="contact-form-icon">
+                  <Send size={18} />
                 </div>
+
                 <div>
-                  <label style={{ fontSize: '0.78rem', color: 'var(--sub)', display: 'block', marginBottom: '0.4rem' }}>Email</label>
-                  <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="your@email.com" style={{ width: '100%', background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: 8, padding: '0.65rem 0.9rem', color: 'var(--text)', fontSize: '0.875rem', outline: 'none' }} />
+                  <h2>Send a Message</h2>
+                  <p>I'd be happy to hear from you.</p>
                 </div>
               </div>
 
-              <div>
-                <label style={{ fontSize: '0.78rem', color: 'var(--sub)', display: 'block', marginBottom: '0.4rem' }}>Subject</label>
-                <input type="text" name="subject" value={form.subject} onChange={handleChange} placeholder="Job Opportunity | Internship | Collaboration" style={{ width: '100%', background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: 8, padding: '0.65rem 0.9rem', color: 'var(--text)', fontSize: '0.875rem', outline: 'none' }} />
-              </div>
+              <form onSubmit={handleSubmit}>
+                <div className="contact-form-row">
+                  <div className="form-group">
+                    <label htmlFor="contact-name">Your Name</label>
+                    <input
+                      id="contact-name"
+                      type="text"
+                      name="name"
+                      value={form.name}
+                      onChange={handleChange}
+                      placeholder="Enter your name"
+                      autoComplete="name"
+                      required
+                    />
+                  </div>
 
-              <div>
-                <label style={{ fontSize: '0.78rem', color: 'var(--sub)', display: 'block', marginBottom: '0.4rem' }}>Message</label>
-                <textarea name="message" value={form.message} onChange={handleChange} placeholder="Tell me about the opportunity, project, or collaboration..." rows={5} style={{ width: '100%', background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: 8, padding: '0.65rem 0.9rem', color: 'var(--text)', fontSize: '0.875rem', outline: 'none', resize: 'vertical', fontFamily: 'Inter, sans-serif' }} />
-              </div>
+                  <div className="form-group">
+                    <label htmlFor="contact-email">Email Address</label>
+                    <input
+                      id="contact-email"
+                      type="email"
+                      name="email"
+                      value={form.email}
+                      onChange={handleChange}
+                      placeholder="your@email.com"
+                      autoComplete="email"
+                      required
+                    />
+                  </div>
+                </div>
 
-              <a href={mailtoLink} target="_blank" rel="noreferrer" className="hover-btn" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, background: 'var(--violet)', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: 8, fontSize: '0.875rem', fontWeight: 600, fontFamily: 'Space Grotesk, sans-serif', textDecoration: 'none' }}>
-                <Send size={15} /> Send via Email
-              </a>
+                <div className="form-group">
+                  <label htmlFor="contact-subject">Subject</label>
+                  <input
+                    id="contact-subject"
+                    type="text"
+                    name="subject"
+                    value={form.subject}
+                    onChange={handleChange}
+                    placeholder="Job Opportunity / Internship / Collaboration"
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="contact-message">Message</label>
+                  <textarea
+                    id="contact-message"
+                    name="message"
+                    value={form.message}
+                    onChange={handleChange}
+                    placeholder="Write your message here..."
+                    rows={6}
+                    required
+                  />
+                </div>
+
+                <button type="submit" className="contact-submit-button">
+                  <Send size={16} />
+                  Send via Email
+                  <ArrowUpRight size={16} />
+                </button>
+
+                <p className="contact-form-note">
+                  This button opens Gmail with your message prepared.
+                  You can review and send it from there.
+                </p>
+              </form>
             </div>
-          </div>
           </Reveal>
 
         </div>

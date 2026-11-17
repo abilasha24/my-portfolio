@@ -1,0 +1,397 @@
+
+.about-page {
+  padding-top: 76px;
+  min-height: 100vh;
+}
+
+.about-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* PAGE HEADER */
+
+.about-header {
+  padding: 5rem 1.5rem 4rem;
+  text-align: center;
+}
+
+.about-header-content {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.about-eyebrow {
+  color: var(--violet);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.about-header h1,
+.about-section-heading h2,
+.about-story h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+.about-header h1 {
+  font-size: clamp(2.5rem, 5vw, 3rem);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.about-header h1 span,
+.about-section-heading h2 span,
+.about-story h2 span {
+  color: var(--violet2);
+}
+
+.about-header-description {
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--sub);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* ABOUT MAIN SECTION */
+
+.about-main-section {
+  padding: 4rem 0;
+  background: var(--card);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.about-story h2 {
+  font-size: 1.875rem;
+  line-height: 1.3;
+  margin-bottom: 1.3rem;
+}
+
+.about-story > p:not(.about-eyebrow) {
+  color: var(--sub);
+  font-size: 1rem;
+  line-height: 1.85;
+  margin-bottom: 1rem;
+}
+
+/* INTERESTS */
+
+.about-interest-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1.5rem;
+}
+
+.about-interest {
+  padding: 0.45rem 0.85rem;
+  border-radius: 50px;
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  background: rgba(139, 92, 246, 0.09);
+  color: var(--violet2);
+  font-size: 0.875rem;
+}
+
+/* PERSONAL INFORMATION */
+
+.about-info-card {
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--bg);
+}
+
+.about-info-card h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.about-info-card h2 svg {
+  color: var(--violet2);
+}
+
+.about-info-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.about-info-row:last-child {
+  border-bottom: none;
+}
+
+.about-info-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--sub);
+  font-size: 0.875rem;
+}
+
+.about-info-label svg {
+  color: var(--violet2);
+  flex-shrink: 0;
+}
+
+.about-info-value,
+.about-info-row a {
+  color: var(--text);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  font-weight: 500;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.about-info-row a {
+  color: var(--violet2);
+}
+
+.about-info-row a:hover {
+  text-decoration: underline;
+}
+
+.about-availability {
+  color: var(--green);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* EDUCATION SECTION */
+
+.about-education-section {
+  padding: 5rem 0;
+}
+
+.about-section-heading {
+  margin-bottom: 2rem;
+}
+
+.about-section-heading h2 {
+  font-size: clamp(1.875rem, 3vw, 2.125rem);
+  line-height: 1.3;
+}
+
+.about-education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+}
+
+.about-education-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  background: var(--card);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.about-education-card:hover,
+.about-certification-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--violet);
+}
+
+.about-education-icon,
+.about-certification-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--violet2);
+  background: rgba(139, 92, 246, 0.12);
+  border-radius: 10px;
+}
+
+.about-education-icon {
+  width: 45px;
+  height: 45px;
+}
+
+.about-education-content h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.about-education-institution {
+  color: var(--violet2);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin-bottom: 0.25rem;
+}
+
+.about-education-campus {
+  color: var(--sub);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.about-education-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 0.85rem;
+}
+
+.about-education-meta span {
+  font-size: 0.8125rem;
+  color: var(--sub);
+  padding: 0.35rem 0.7rem;
+  border-radius: 5px;
+  background: rgba(139, 92, 246, 0.08);
+}
+
+/* CERTIFICATIONS */
+
+.about-certification-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1.3rem;
+}
+
+.about-certification-heading svg {
+  color: var(--violet2);
+  flex-shrink: 0;
+}
+
+.about-certification-heading h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.375rem;
+}
+
+.about-certification-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.about-certification-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: var(--card);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.about-certification-icon {
+  width: 35px;
+  height: 35px;
+}
+
+.about-certification-card h3 {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 0.3rem;
+}
+
+.about-certification-card p {
+  color: var(--sub);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+/* TABLET */
+
+@media (max-width: 850px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-info-card {
+    max-width: 100%;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .about-container {
+    padding: 0 1.2rem;
+  }
+
+  .about-header {
+    padding: 3.5rem 1.2rem;
+  }
+
+  .about-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .about-header-description {
+    font-size: 0.9375rem;
+  }
+
+  .about-main-section {
+    padding: 3rem 0;
+  }
+
+  .about-story h2 {
+    font-size: 1.6rem;
+  }
+
+  .about-story > p:not(.about-eyebrow) {
+    font-size: 0.9375rem;
+  }
+
+  .about-education-section {
+    padding: 3.5rem 0;
+  }
+
+  .about-section-heading h2 {
+    font-size: 1.7rem;
+  }
+
+  .about-certification-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-education-card {
+    padding: 1.1rem;
+    gap: 0.85rem;
+  }
+
+  .about-education-content h3 {
+    font-size: 1rem;
+  }
+
+  .about-info-card {
+    padding: 1.2rem;
+  }
+
+  .about-certification-card h3 {
+    font-size: 0.9rem;
+  }
+}

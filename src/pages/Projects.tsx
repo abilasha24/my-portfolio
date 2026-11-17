@@ -1,4 +1,6 @@
+
 import { Github, ExternalLink } from 'lucide-react';
+
 import {
   FarmerIcon,
   ShopIcon,
@@ -6,30 +8,33 @@ import {
   MLIcon,
   PortfolioIcon,
 } from '../components/ProjectIcons';
+
 import Reveal from '../components/Reveal';
+import './Projects.css';
 
 const projects = [
   {
     name: 'Tamil Farmer Assistant',
-    date: 'Jun 2026 · Kaggle AI Agents Capstone',
-    desc: 'Tamil-language AI assistant for farmers in Jaffna, providing agriculture guidance and real-time weather information. Built with LLaMA 3.3 via Groq API and multi-tool orchestration using Google ADK.',
+    category: 'AI Agent · Personal Project',
+    date: 'June 2026',
+    desc: 'A Tamil-language AI assistant designed to support farmers in Jaffna with agricultural guidance, weather information, crop suggestions and market prices.',
     tech: [
       'Python',
       'Google ADK',
       'Groq API',
-      'LLaMA 3.3',
-      'OpenWeatherMap',
+      'GPT-OSS 120B',
+      'OpenWeatherMap API',
       'Streamlit',
     ],
     github: 'https://github.com/abilasha24/Tamil-farmer-agent',
     live: 'https://tamil-farmer-agent-j3cyzcehjeedshdjfmt3mw.streamlit.app',
     icon: FarmerIcon,
   },
-
   {
-    name: 'AuraShop — E-Commerce Platform',
-    date: 'Jun 2026 · Full Stack',
-    desc: 'Full-stack e-commerce platform with product listing, search, category filtering, shopping cart, JWT authentication, and role-based access control. Built with Next.js and a RESTful Express.js backend with PostgreSQL and Prisma ORM.',
+    name: 'AuraShop',
+    category: 'Full-Stack Development · Personal Project',
+    date: 'June 2026',
+    desc: 'A full-stack e-commerce platform featuring product listings, search, category filtering and shopping cart functionality. Includes a RESTful backend API with JWT authentication and role-based access control.',
     tech: [
       'Next.js 14',
       'TypeScript',
@@ -44,27 +49,11 @@ const projects = [
     live: 'https://aura-shop-ecommerce-frontend.vercel.app',
     icon: ShopIcon,
   },
-
   {
-    name: 'SmartFit System',
-    date: 'Dec 2025 – Mar 2026 · Personal Project',
-    desc: 'Role-based fitness management system featuring separate dashboards for administrators, trainers, and members. Implemented session-based authentication, role authorization, CRUD functionality, and a normalized MySQL database.',
-    tech: [
-      'PHP',
-      'MySQL',
-      'JavaScript',
-      'HTML',
-      'CSS',
-    ],
-    github: 'https://github.com/abilasha24/smart_fit',
-    live: 'http://smartfitweb.rf.gd',
-    icon: FitnessIcon,
-  },
-
-  {
-    name: 'Student Score Predictor',
-    date: 'Jan – Feb 2026 · Machine Learning',
-    desc: 'Machine learning web application for predicting student performance using regression models. Implemented data preprocessing and feature engineering with Random Forest and Gradient Boosting, then integrated the trained model into an interactive Streamlit application.',
+    name: 'Student Score Prediction',
+    category: 'Machine Learning · Personal Project',
+    date: 'January – February 2026',
+    desc: 'A machine learning web application that predicts student performance using regression models. Includes data preprocessing, feature engineering, model training and an interactive web interface.',
     tech: [
       'Python',
       'Scikit-learn',
@@ -76,11 +65,26 @@ const projects = [
     live: 'https://student-score-prediction1-app-an5yveweb5jgse5c7c7kcg.streamlit.app/',
     icon: MLIcon,
   },
-
+  {
+    name: 'SmartFit System',
+    category: 'Web Development · Personal Project',
+    date: 'December 2025 – March 2026',
+    desc: 'A role-based fitness management system with separate dashboards for administrators, trainers and members. Includes session-based authentication, authorization, CRUD operations and MySQL database management.',
+    tech: [
+      'PHP',
+      'MySQL',
+      'JavaScript',
+      'HTML5',
+      'CSS3',
+    ],
+    github: 'https://github.com/abilasha24/smart_fit',
+    icon: FitnessIcon,
+  },
   {
     name: 'Personal Portfolio Website',
-    date: '2026 · Personal Project',
-    desc: 'Responsive developer portfolio designed and developed to showcase full-stack, AI, and machine-learning projects using React, TypeScript, and Tailwind CSS.',
+    category: 'Frontend Development · Personal Project',
+    date: '2026',
+    desc: 'A responsive, dark-themed portfolio website developed to present my background, technical skills and software projects. Built using reusable React components and deployed through Vercel.',
     tech: [
       'React',
       'TypeScript',
@@ -88,232 +92,106 @@ const projects = [
       'Vite',
     ],
     github: 'https://github.com/abilasha24/my-portfolio',
-    live: '',
     icon: PortfolioIcon,
   },
 ];
 
-const linkStyle = {
-  display: 'inline-flex' as const,
-  alignItems: 'center' as const,
-  gap: 5,
-  fontSize: '0.78rem',
-  color: 'var(--sub)',
-  border: '1px solid var(--border)',
-  borderRadius: 6,
-  padding: '0.25rem 0.7rem',
-  textDecoration: 'none',
-  whiteSpace: 'nowrap' as const,
-};
-
-const techBadge = {
-  background: 'rgba(139,92,246,0.1)',
-  color: 'var(--violet2)',
-  fontSize: '0.72rem',
-  padding: '0.2rem 0.55rem',
-  borderRadius: 5,
-};
-
 export default function Projects() {
   return (
-    <main style={{ paddingTop: 80, minHeight: '100vh' }}>
+    <main className="projects-page">
 
-      {/* Header */}
-      <section
-        style={{
-          padding: '4rem 1.5rem 2rem',
-          textAlign: 'center',
-        }}
-      >
+      {/* HEADER */}
+      <section className="projects-header">
         <Reveal>
-          <div
-            style={{
-              maxWidth: 900,
-              margin: '0 auto',
-            }}
-          >
-            <p
-              style={{
-                fontSize: '0.72rem',
-                fontWeight: 600,
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-                color: 'var(--violet)',
-                marginBottom: '0.5rem',
-              }}
-            >
-              Work
-            </p>
+          <div className="projects-header-content">
+            <p className="projects-eyebrow">MY WORK</p>
 
-            <h1
-              style={{
-                fontFamily: 'Space Grotesk, sans-serif',
-                fontSize: 'clamp(1.8rem, 4vw, 2.5rem)',
-                fontWeight: 700,
-                letterSpacing: '-0.03em',
-                marginBottom: '1rem',
-              }}
-            >
-              Featured{' '}
-              <span style={{ color: 'var(--violet2)' }}>
-                Projects
-              </span>
+            <h1>
+              Featured <span>Projects</span>
             </h1>
 
-            <p
-              style={{
-                color: 'var(--sub)',
-                maxWidth: 520,
-                margin: '0 auto',
-                fontSize: '0.925rem',
-                lineHeight: 1.8,
-              }}
-            >
-              A selection of projects showcasing my experience in
-              full-stack development, AI integration, and machine learning.
+            <p>
+              A collection of personal projects demonstrating my work
+              in Python development, Artificial Intelligence,
+              Machine Learning and full-stack web development.
             </p>
           </div>
         </Reveal>
       </section>
 
-      {/* Projects */}
-      <section
-        style={{
-          padding: '2rem 1.5rem 5rem',
-        }}
-      >
-        <div
-          style={{
-            maxWidth: 900,
-            margin: '0 auto',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '1rem',
-          }}
-        >
-          {projects.map((p, i) => (
-            <Reveal key={p.name} delay={i * 100}>
-              <div
-                className="hover-card"
-                style={{
-                  background: 'var(--card)',
-                  border: '1px solid var(--border)',
-                  borderRadius: 14,
-                  padding: '1.5rem',
-                  display: 'grid',
-                  gridTemplateColumns: '64px 1fr auto',
-                  gap: '1.1rem',
-                  alignItems: 'start',
-                }}
-              >
+      {/* PROJECT LIST */}
+      <section className="projects-section">
+        <div className="projects-container">
 
-                {/* Project Icon */}
-                <div
-                  style={{
-                    width: 56,
-                    height: 56,
-                    flexShrink: 0,
-                  }}
-                >
-                  <p.icon />
+          {projects.map((project, index) => (
+            <Reveal key={project.name} delay={index * 80}>
+              <article className="project-card">
+
+                {/* ICON */}
+                <div className="project-icon">
+                  <project.icon />
                 </div>
 
-                {/* Project Information */}
-                <div>
-
-                  {/* Project Name */}
-                  <div
-                    style={{
-                      fontFamily: 'Space Grotesk, sans-serif',
-                      fontSize: '1rem',
-                      fontWeight: 700,
-                      marginBottom: '0.2rem',
-                    }}
-                  >
-                    {p.name}
+                {/* DETAILS */}
+                <div className="project-content">
+                  <div className="project-category">
+                    {project.category}
                   </div>
 
-                  {/* Project Date */}
-                  <div
-                    style={{
-                      fontSize: '0.72rem',
-                      color: 'var(--sub)',
-                      marginBottom: '0.6rem',
-                    }}
-                  >
-                    {p.date}
-                  </div>
+                  <h2>{project.name}</h2>
 
-                  {/* Description */}
-                  <p
-                    style={{
-                      fontSize: '0.865rem',
-                      color: 'var(--sub)',
-                      lineHeight: 1.75,
-                      marginBottom: '0.9rem',
-                    }}
-                  >
-                    {p.desc}
+                  <p className="project-date">
+                    {project.date}
                   </p>
 
-                  {/* Technologies */}
-                  <div
-                    style={{
-                      display: 'flex',
-                      flexWrap: 'wrap',
-                      gap: '0.35rem',
-                    }}
-                  >
-                    {p.tech.map((t) => (
+                  <p className="project-description">
+                    {project.desc}
+                  </p>
+
+                  {/* TECHNOLOGIES */}
+                  <div className="project-tech-list">
+                    {project.tech.map((technology) => (
                       <span
-                        key={t}
-                        className="hover-badge"
-                        style={techBadge}
+                        key={technology}
+                        className="project-tech"
                       >
-                        {t}
+                        {technology}
                       </span>
                     ))}
                   </div>
-
                 </div>
 
-                {/* Project Links */}
-                <div
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '0.4rem',
-                    alignItems: 'flex-end',
-                  }}
-                >
+                {/* LINKS */}
+                <div className="project-links">
                   <a
-                    href={p.github}
+                    href={project.github}
                     target="_blank"
-                    rel="noreferrer"
-                    className="hover-btn"
-                    style={linkStyle}
+                    rel="noopener noreferrer"
+                    className="project-link"
+                    aria-label={`View ${project.name} source code on GitHub`}
                   >
-                    <Github size={13} />
+                    <Github size={16} />
                     GitHub
                   </a>
 
-                  {p.live !== '' && (
+                  {project.live && (
                     <a
-                      href={p.live}
+                      href={project.live}
                       target="_blank"
-                      rel="noreferrer"
-                      className="hover-btn"
-                      style={linkStyle}
+                      rel="noopener noreferrer"
+                      className="project-link project-live-link"
+                      aria-label={`View ${project.name} live demo`}
                     >
-                      <ExternalLink size={13} />
-                      Live
+                      <ExternalLink size={16} />
+                      Live Demo
                     </a>
                   )}
                 </div>
 
-              </div>
+              </article>
             </Reveal>
           ))}
+
         </div>
       </section>
 

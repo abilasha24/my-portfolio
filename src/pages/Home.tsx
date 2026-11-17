@@ -1,203 +1,266 @@
+
 import { Link } from 'react-router-dom';
-import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
+import {
+  ArrowRight,
+  Github,
+  Linkedin,
+  Mail,
+  MapPin,
+  Code2,
+  Sparkles,
+} from 'lucide-react';
 import Reveal from '../components/Reveal';
+import './Home.css';
+
+const socialLinks = [
+  {
+    label: 'GitHub',
+    url: 'https://github.com/abilasha24',
+    icon: Github,
+  },
+  {
+    label: 'LinkedIn',
+    url: 'https://linkedin.com/in/abilashaselvanayakam2k06',
+    icon: Linkedin,
+  },
+  {
+    label: 'Email',
+    url: 'mailto:selvanayagamabilasha@gmail.com',
+    icon: Mail,
+  },
+];
+
+
+const skillGroups = [
+  {
+    title: 'Programming & Query Languages',
+    skills: [
+      { name: 'Python', logo: 'python/python-original.svg' },
+      { name: 'JavaScript', logo: 'javascript/javascript-original.svg' },
+      { name: 'TypeScript', logo: 'typescript/typescript-original.svg' },
+      { name: 'PHP', logo: 'php/php-original.svg' },
+      { name: 'SQL', logo: null },
+    ],
+  },
+  {
+    title: 'Frontend Development',
+    skills: [
+      { name: 'HTML5', logo: 'html5/html5-original.svg' },
+      { name: 'CSS3', logo: 'css3/css3-original.svg' },
+      { name: 'React', logo: 'react/react-original.svg' },
+      { name: 'Next.js', logo: 'nextjs/nextjs-original.svg' },
+      { name: 'Tailwind CSS', logo: 'tailwindcss/tailwindcss-original.svg' },
+    ],
+  },
+  {
+    title: 'Backend & Databases',
+    skills: [
+      { name: 'Node.js', logo: 'nodejs/nodejs-original.svg' },
+      { name: 'Express.js', logo: null },
+      { name: 'REST APIs', logo: null },
+      { name: 'PostgreSQL', logo: 'postgresql/postgresql-original.svg' },
+      { name: 'MySQL', logo: 'mysql/mysql-original.svg' },
+      { name: 'Prisma ORM', logo: null },
+      { name: 'JWT Authentication', logo: null },
+    ],
+  },
+  {
+    title: 'AI & Machine Learning',
+    skills: [
+      { name: 'Google ADK', logo: null },
+      { name: 'Groq API', logo: null },
+      { name: 'OpenWeatherMap API', logo: null },
+      { name: 'Scikit-learn', logo: null },
+      { name: 'Streamlit', logo: null },
+    ],
+  },
+  {
+    title: 'Developer Tools & Platforms',
+    skills: [
+      { name: 'Git', logo: 'git/git-original.svg' },
+      { name: 'GitHub', logo: 'github/github-original.svg' },
+      { name: 'Postman', logo: 'postman/postman-original.svg' },
+      { name: 'Vercel', logo: 'vercel/vercel-original.svg' },
+    ],
+  },
+];
+
+const deviconBase =
+  'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/';
 
 export default function Home() {
   return (
-    <main style={{ minHeight: '100vh' }}>
+    <main className="home-page">
+      {/* HERO SECTION */}
+      
+<section className="hero-section">
+  <div className="hero-background-glow" />
 
-      {/* HERO */}
-      <section style={{
-        minHeight: '100vh', display: 'flex', alignItems: 'center',
-        justifyContent: 'center', textAlign: 'center',
-        padding: '100px 1.5rem 60px',
-      }}>
-        <Reveal>
-        <div style={{ maxWidth: 640 }}>
+  <Reveal>
+    <div className="hero-layout">
 
-          {/* Avatar */}
-          <div className="avatar-pulse" style={{
-            width: 100, height: 100, borderRadius: '50%',
-            background: 'linear-gradient(135deg, #8B5CF6, #4C1D95)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            margin: '0 auto 1.5rem',
-            border: '3px solid var(--border)',
-            fontSize: '2rem', fontWeight: 700, color: '#fff',
-            fontFamily: 'Space Grotesk, sans-serif',
-          }}>
-            AS
-          </div>
-
-          {/* Badge */}
-          <div style={{
-            display: 'inline-flex', alignItems: 'center', gap: 8,
-            background: 'rgba(139,92,246,0.12)',
-            border: '1px solid rgba(139,92,246,0.25)',
-            color: 'var(--violet2)', fontSize: '0.78rem',
-            padding: '0.3rem 1rem', borderRadius: 99,
-            marginBottom: '1.25rem', fontWeight: 500,
-          }}>
-            <span style={{ width: 7, height: 7, background: 'var(--green)', borderRadius: '50%', display: 'inline-block' }} />
-            Open to Junior Software Engineering Opportunities
-          </div>
-
-          {/* Name */}
-          <h1 style={{
-            fontFamily: 'Space Grotesk, sans-serif',
-            fontSize: 'clamp(2rem, 5vw, 3.25rem)',
-            fontWeight: 700, lineHeight: 1.1,
-            letterSpacing: '-0.03em', marginBottom: '0.75rem',
-          }}>
-            Hi, I'm{' '}
-            <span style={{ color: 'var(--violet2)' }}>Abilasha</span>
-            <br />Selvanayakam
-          </h1>
-
-          {/* Role */}
-          <p style={{ color: 'var(--sub)', fontSize: '1rem', marginBottom: '0.75rem' }}>
-            Junior Software Engineer · Full-Stack & AI Developer
-          </p>
-
-          {/* Description */}
-          <p style={{
-            color: 'var(--sub)', fontSize: '0.925rem',
-            lineHeight: 1.8, marginBottom: '2rem', maxWidth: 500, margin: '0 auto 2rem',
-          }}>
-            B.Sc. (Hons) Software Engineering graduate building full-stack, AI-powered, and machine-learning applications using JavaScript, TypeScript, Python, React, Next.js, Node.js, and PostgreSQL.
-          </p>
-
-          {/* Buttons */}
-          <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link to="/projects" className="hover-btn" style={{
-              display: 'inline-flex', alignItems: 'center', gap: 6,
-              background: 'var(--violet)', color: '#fff',
-              padding: '0.7rem 1.5rem', borderRadius: 8,
-              fontSize: '0.875rem', fontWeight: 600,
-              fontFamily: 'Space Grotesk, sans-serif', textDecoration: 'none',
-            }}>
-              View Projects <ArrowRight size={15} />
-            </Link>
-
-            <Link to="/contact" className="hover-btn" style={{
-              display: 'inline-flex', alignItems: 'center', gap: 6,
-              background: 'transparent', color: 'var(--text)',
-              border: '1px solid var(--border)',
-              padding: '0.7rem 1.5rem', borderRadius: 8,
-              fontSize: '0.875rem', fontWeight: 500,
-              fontFamily: 'Space Grotesk, sans-serif', textDecoration: 'none',
-            }}>
-              Contact Me
-            </Link>
-          </div>
-
-          {/* Social links */}
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '1.75rem' }}>
-            <a href="https://github.com/abilasha24" target="_blank" rel="noreferrer"
-              style={{ color: 'var(--sub)', transition: 'color 0.2s' }}
-              onMouseOver={e => (e.currentTarget.style.color = 'var(--text)')}
-              onMouseOut={e => (e.currentTarget.style.color = 'var(--sub)')}>
-              <Github size={20} />
-            </a>
-            <a href="https://linkedin.com/in/abilashaselvanayakam2k06" target="_blank" rel="noreferrer"
-              style={{ color: 'var(--sub)', transition: 'color 0.2s' }}
-              onMouseOver={e => (e.currentTarget.style.color = 'var(--text)')}
-              onMouseOut={e => (e.currentTarget.style.color = 'var(--sub)')}>
-              <Linkedin size={20} />
-            </a>
-            <a href="mailto:selvanayagamabilasha@gmail.com"
-              style={{ color: 'var(--sub)', transition: 'color 0.2s' }}
-              onMouseOver={e => (e.currentTarget.style.color = 'var(--text)')}
-              onMouseOut={e => (e.currentTarget.style.color = 'var(--sub)')}>
-              <Mail size={20} />
-            </a>
-          </div>
-
-          {/* Stats */}
-          <div style={{
-            display: 'flex', justifyContent: 'center', gap: '3rem',
-            marginTop: '3rem', paddingTop: '2rem',
-            borderTop: '1px solid var(--border)',
-          }}>
-            {[
-              { num: '4', label: 'Featured Projects' },
-              { num: '2026', label: 'B.Sc. Graduate' },
-              { num: 'Web + AI', label: 'Development Focus' },
-            ].map(s => (
-              <div key={s.label}>
-                <div style={{
-                  fontFamily: 'Space Grotesk, sans-serif',
-                  fontSize: '1.6rem', fontWeight: 700, color: 'var(--violet2)',
-                }}>{s.num}</div>
-                <div style={{ fontSize: '0.75rem', color: 'var(--sub)', marginTop: 2 }}>{s.label}</div>
-              </div>
-            ))}
-          </div>
-
+      {/* LEFT SIDE - INTRODUCTION */}
+      <div className="hero-content">
+        <div className="availability-badge">
+          <span className="availability-dot" />
+          Open to Entry-Level Opportunities
         </div>
-        </Reveal>
-      </section>
+
+        <p className="hero-greeting">HELLO, I'M</p>
+
+        <h1 className="hero-name">
+          Abilasha
+          <span> Selvanayakam</span>
+        </h1>
+
+        <h2 className="hero-role">
+          Software Engineering Graduate
+        </h2>
+
+        <p className="hero-career">
+          Aspiring Python Developer
+          <span> | </span>
+          AI Engineer
+        </p>
+
+        <p className="hero-description">
+          A Software Engineering graduate interested in Python
+          development, Machine Learning and AI-powered applications.
+          I have also built full-stack web applications using modern
+          frontend, backend and database technologies.
+        </p>
+
+        <div className="hero-location">
+          <MapPin size={16} />
+          Jaffna, Sri Lanka
+        </div>
+
+        <div className="hero-buttons">
+          <Link to="/projects" className="primary-button">
+            Explore My Projects
+            <ArrowRight size={17} />
+          </Link>
+
+          <Link to="/contact" className="secondary-button">
+            Get In Touch
+          </Link>
+        </div>
+
+        <div className="hero-socials">
+          {socialLinks.map(({ label, url, icon: Icon }) => (
+            <a
+              key={label}
+              href={url}
+              target={label === 'Email' ? undefined : '_blank'}
+              rel={label === 'Email' ? undefined : 'noopener noreferrer'}
+              aria-label={label}
+              title={label}
+              className="social-link"
+            >
+              <Icon size={20} />
+            </a>
+          ))}
+        </div>
+
+        <div className="hero-stats">
+          <div className="stat-item">
+            <strong>04</strong>
+            <span>Projects Built</span>
+          </div>
+
+          <div className="stat-item">
+            <strong>2026</strong>
+            <span>Graduate</span>
+          </div>
+
+          <div className="stat-item">
+            <strong>Python + AI</strong>
+            <span>Career Direction</span>
+          </div>
+        </div>
+      </div>
+
+      {/* RIGHT SIDE - CIRCULAR PROFILE PHOTO */}
+      <div className="hero-profile">
+        <div className="hero-photo-wrapper">
+          <img
+            src="/profile.jpg"
+            alt="Abilasha Selvanayakam"
+            className="hero-photo"
+          />
+          <span className="photo-status" />
+        </div>
+
+        <div className="profile-caption">
+          <span>Software Engineering Graduate</span>
+          <span>Jaffna, Sri Lanka</span>
+        </div>
+      </div>
+
+    </div>
+  </Reveal>
+</section>
+
 
       {/* SKILLS PREVIEW */}
-      <section style={{
-        padding: '4rem 1.5rem',
-        background: 'var(--card)',
-        borderTop: '1px solid var(--border)',
-      }}>
+      <section className="skills-section">
         <Reveal>
-        <div style={{ maxWidth: 900, margin: '0 auto' }}>
-          <p style={{
-            textAlign: 'center', fontSize: '0.72rem', fontWeight: 600,
-            letterSpacing: '0.1em', textTransform: 'uppercase',
-            color: 'var(--violet)', marginBottom: '0.5rem',
-          }}>Tech Stack</p>
-          <h2 style={{
-            fontFamily: 'Space Grotesk, sans-serif', textAlign: 'center',
-            fontSize: 'clamp(1.4rem, 3vw, 1.9rem)', fontWeight: 700,
-            marginBottom: '2rem', letterSpacing: '-0.02em',
-          }}>
-            Skills & <span style={{ color: 'var(--violet2)' }}>Technologies</span>
-          </h2>
+          <div className="section-heading">
+            <span className="section-eyebrow">
+              <Code2 size={15} />
+              TECHNICAL EXPERTISE
+            </span>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '1rem',
-          }}>
-            {[
-              { cat: 'Frontend', skills: ['React', 'Next.js 14', 'TypeScript', 'Tailwind CSS', 'HTML5', 'CSS3'] },
-              { cat: 'Backend & APIs', skills: ['PHP', 'Node.js', 'Express.js', 'RESTful APIs', 'JWT Authentication','RBAC'] },
-              { cat: 'Database & ORM', skills: ['MySQL', 'PostgreSQL', 'Prisma ORM'] },
-              { cat: 'AI & ML', skills: ['Python','Google ADK', 'Groq API', 'LLaMA 3.3', 'Scikit-learn', 'Streamlit'] },
-              { cat: 'Programming Languages', skills: ['JavaScript', 'TypeScript', 'PHP', 'Python', 'SQL'] },
-              { cat: 'Tools & Platforms', skills: ['Git', 'GitHub', 'Vercel', 'VS Code', 'Postman','Streamlit Cloud'] },
-            ].map(({ cat, skills }, i) => (
-              <Reveal key={cat} delay={i * 100}>
-                <div className="hover-card" style={{
-                  background: 'var(--bg)', border: '1px solid var(--border)',
-                  borderRadius: 12, padding: '1.15rem',
-                }}>
-                  <p style={{
-                    fontSize: '0.72rem', fontWeight: 600,
-                    letterSpacing: '0.08em', textTransform: 'uppercase',
-                    color: 'var(--violet)', marginBottom: '0.85rem',
-                  }}>{cat}</p>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
-                    {skills.map(s => (
-                      <span key={s} className="hover-badge" style={{
-                        background: 'var(--card2)', color: 'var(--sub)',
-                        fontSize: '0.78rem', padding: '0.25rem 0.65rem',
-                        borderRadius: 6, border: '1px solid var(--border)',
-                      }}>{s}</span>
-                    ))}
-                  </div>
-                </div>
-              </Reveal>
-            ))}
+            <h2>
+              Technologies & <span>Tools</span>
+            </h2>
+
+            <p>
+              Technologies and tools I have used while learning and
+              building my software development projects.
+            </p>
           </div>
-        </div>
         </Reveal>
-      </section>
 
+        <div className="skills-grid">
+          {skillGroups.map((group, index) => (
+            <Reveal key={group.title} delay={index * 100}>
+              <div className="skill-card">
+                <h3>{group.title}</h3>
+
+                <div className="skill-list">
+                  {group.skills.map((skill) => (
+                    <div className="skill-item" key={skill.name}>
+                      {skill.logo ? (
+                        <img
+                          src={`${deviconBase}${skill.logo}`}
+                          alt=""
+                          className="skill-logo"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <Sparkles
+                          size={15}
+                          className="skill-fallback-icon"
+                        />
+                      )}
+
+                      <span>{skill.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        <div className="all-skills-link">
+          <Link to="/about">
+            Learn More About My Skills
+            <ArrowRight size={16} />
+          </Link>
+        </div>
+      </section>
     </main>
   );
 }

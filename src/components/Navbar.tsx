@@ -1,6 +1,7 @@
 ﻿import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Code2 } from 'lucide-react';
+import './Navbar.css';
 
 const navLinks = [
   { label: 'Home', path: '/' },
@@ -16,6 +17,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
+
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
@@ -25,27 +27,63 @@ export default function Navbar() {
   }, [location]);
 
   return (
-    <nav style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100, background: scrolled ? 'rgba(13,13,20,0.95)' : 'transparent', backdropFilter: scrolled ? 'blur(16px)' : 'none', borderBottom: scrolled ? '1px solid var(--border)' : 'none', transition: 'all 0.3s ease' }}>
-      <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 1.5rem', height: 60, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 8, textDecoration: 'none' }}>
-          <Code2 size={20} color="var(--violet2)" />
-          <span style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: '1rem', color: 'var(--violet2)' }}>abi.dev</span>
+    <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
+      <div className="navbar-container">
+
+        <Link to="/" className="navbar-logo">
+          <Code2 size={23} />
+          <span>abi<span className="logo-highlight">.dev</span></span>
         </Link>
-        <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-          {navLinks.map(link => (
-            <Link key={link.path} to={link.path} style={{ fontSize: '0.85rem', fontWeight: 500, textDecoration: 'none', color: location.pathname === link.path ? 'var(--violet2)' : 'var(--sub)' }}>
+
+        <div className="navbar-links">
+          {navLinks.map((link) => (
+            <Link
+              key={link.path}
+              to={link.path}
+              className={`navbar-link ${
+                location.pathname === link.path ? 'active' : ''
+              }`}
+            >
               {link.label}
             </Link>
           ))}
         </div>
+
+        <div className="navbar-actions">
+  <button
+    className="menu-toggle"
+    onClick={() => setMenuOpen(!menuOpen)}
+    aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+    aria-expanded={menuOpen}
+  >
+    {menuOpen ? <X size={23} /> : <Menu size={23} />}
+  </button>
+</div>
       </div>
+
       {menuOpen && (
-        <div style={{ background: 'var(--card)', borderTop: '1px solid var(--border)', padding: '1rem 1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          {navLinks.map(link => (
-            <Link key={link.path} to={link.path} style={{ fontSize: '0.9rem', fontWeight: 500, textDecoration: 'none', color: location.pathname === link.path ? 'var(--violet2)' : 'var(--sub)' }}>
+        <div className="mobile-menu">
+          {navLinks.map((link) => (
+            <Link
+              key={link.path}
+              to={link.path}
+              className={`mobile-link ${
+                location.pathname === link.path ? 'active' : ''
+              }`}
+            >
               {link.label}
             </Link>
           ))}
+
+          <a
+            href="/Abilasha-Selvanayakam-CV.pdf"
+            className="mobile-cv"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Download size={16} />
+            Download CV
+          </a>
         </div>
       )}
     </nav>

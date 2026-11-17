@@ -1,181 +1,291 @@
-import { MapPin, Mail, GraduationCap, Award } from 'lucide-react';
+
+import {
+  MapPin,
+  Mail,
+  GraduationCap,
+  Award,
+  Code2,
+  Briefcase,
+} from 'lucide-react';
+
 import Reveal from '../components/Reveal';
+import './About.css';
+
+const quickInfo = [
+  {
+    icon: <MapPin size={17} />,
+    label: 'Location',
+    value: 'Jaffna, Sri Lanka',
+  },
+  {
+    icon: <Mail size={17} />,
+    label: 'Email',
+    value: 'selvanayagamabilasha@gmail.com',
+    link: 'mailto:selvanayagamabilasha@gmail.com',
+  },
+  {
+    icon: <GraduationCap size={17} />,
+    label: 'Qualification',
+    value: 'B.Sc. (Hons) Software Engineering',
+  },
+  {
+    icon: <Briefcase size={17} />,
+    label: 'Career Direction',
+    value: 'Python Developer | AI Engineer',
+  },
+];
+
+const education = [
+  {
+    degree: 'B.Sc. (Hons) Software Engineering',
+    institution: 'Cardiff Metropolitan University, UK',
+    campus: 'ICBT Campus, Jaffna',
+    result: 'Second Class, Division One',
+    period: 'Awarded: May 2026',
+  },
+  {
+    degree: 'Higher Diploma in Computing & Software Engineering',
+    institution: 'Cardiff Metropolitan University',
+    campus: 'ICBT Campus, Jaffna',
+    result: 'Merit Pass',
+    period: 'March 2023 – November 2024',
+  },
+];
+
+const certifications = [
+  {
+    name: 'AI Agents Intensive Vibe Coding Course',
+    org: 'Kaggle & Google · June 2026',
+  },
+  {
+    name: 'Advanced Python Programming',
+    org: 'i-Tech Academy · May 2025',
+  },
+  {
+    name: 'Python Certificate',
+    org: 'GUVI (HCL & Google) · May 2025',
+  },
+  {
+    name: 'Diploma in IT & Artificial Intelligence',
+    org: 'CASED Institute · 2025',
+  },
+  {
+    name: 'Workshop on NLP & Computer Vision',
+    org: 'ICBT Campus, Jaffna · May 2026',
+  },
+  {
+    name: 'IoT & Smart Solutions Workshop',
+    org: 'ICBT Campus, Jaffna · August 2026',
+  },
+  {
+    name: 'AI Master Class',
+    org: 'LP Campus · July 2024',
+  },
+];
+
+const interests = [
+  'Python Development',
+  'Artificial Intelligence',
+  'Machine Learning',
+  'AI-powered Applications',
+  'Full-Stack Development',
+  'Problem Solving',
+];
 
 export default function About() {
   return (
-    <main style={{ paddingTop: 80, minHeight: '100vh' }}>
+    <main className="about-page">
 
-      {/* HEADER */}
-      <section style={{ padding: '4rem 1.5rem 2rem', textAlign: 'center' }}>
+      {/* PAGE INTRO */}
+      <section className="about-header">
         <Reveal>
-        <div style={{ maxWidth: 900, margin: '0 auto' }}>
-          <p style={{
-            fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.1em',
-            textTransform: 'uppercase', color: 'var(--violet)', marginBottom: '0.5rem',
-          }}>About Me</p>
-          <h1 style={{
-            fontFamily: 'Space Grotesk, sans-serif',
-            fontSize: 'clamp(1.8rem, 4vw, 2.5rem)',
-            fontWeight: 700, letterSpacing: '-0.03em', marginBottom: '1rem',
-          }}>
-            Junior Software Engineer · Full-Stack & AI Developer based in <span style={{ color: 'var(--violet2)' }}>Jaffna, Sri Lanka</span>
-          </h1>
-          <p style={{ color: 'var(--sub)', maxWidth: 520, margin: '0 auto', fontSize: '0.925rem', lineHeight: 1.8 }}>
-            B.Sc. (Hons) Software Engineering graduate focused on building full-stack web applications and AI-powered solutions.
-          </p>
-        </div>
+          <div className="about-header-content">
+            <p className="about-eyebrow">GET TO KNOW ME</p>
+
+            <h1>
+              About <span>Me</span>
+            </h1>
+
+            <p className="about-header-description">
+              Software Engineering Graduate with an interest in Python
+              Development, Artificial Intelligence and building practical
+              software applications.
+            </p>
+          </div>
         </Reveal>
       </section>
 
-      {/* ABOUT GRID */}
-      <section style={{ padding: '2rem 1.5rem', background: 'var(--card)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
-        <div style={{ maxWidth: 900, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2.5rem' }}>
+      {/* ABOUT ME */}
+      <section className="about-main-section">
+        <div className="about-container about-grid">
 
-          {/* Left */}
-          <Reveal delay={0}>
-          <div>
-            <h2 style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem' }}>
-              Who I Am
-            </h2>
-            <p style={{ color: 'var(--sub)', fontSize: '0.9rem', lineHeight: 1.85, marginBottom: '1rem' }}>
-              I'm a Junior Software Engineer focused on building full-stack web applications using React, Next.js, TypeScript, Node.js, Express.js, and PostgreSQL.
-              I also build AI-integrated and machine-learning applications using Python, Google ADK, LLM APIs, and Scikit-learn.
-            </p>
-            <p style={{ color: 'var(--sub)', fontSize: '0.9rem', lineHeight: 1.85, marginBottom: '1rem' }}>
-              I hold a B.Sc. (Hons) in Software Engineering from Cardiff Metropolitan University through ICBT Campus Jaffna, awarded in May 2026.
-              I also completed a Higher Diploma in Computing & Software Engineering with Merit Pass in November 2024.
-            </p>
-            <p style={{ color: 'var(--sub)', fontSize: '0.9rem', lineHeight: 1.85 }}>
-              My goal is to combine full-stack engineering and AI technologies to build practical, intelligent, and real-world software solutions.
-            </p>
+          <Reveal>
+            <div className="about-story">
+              <p className="about-eyebrow">MY BACKGROUND</p>
 
-            {/* Pills */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '1.25rem' }}>
-              {['React', 'TypeScript', 'Next.js', 'PHP', 'Python', 'PostgreSQL', 'Google ADK', 'Tailwind CSS'].map((s, i) => (
-                <span key={s} className="hover-badge" style={{
-                  background: 'rgba(139,92,246,0.1)',
-                  border: '1px solid rgba(139,92,246,0.2)',
-                  color: 'var(--violet2)', fontSize: '0.78rem',
-                  padding: '0.3rem 0.75rem', borderRadius: 99,
-                  transitionDelay: `${i * 40}ms`,
-                }}>{s}</span>
-              ))}
-            </div>
-          </div>
-          </Reveal>
+              <h2>
+                Who <span>I Am</span>
+              </h2>
 
-          {/* Right — Info */}
-          <Reveal delay={150}>
-          <div>
-            <h2 style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem' }}>
-              Quick Info
-            </h2>
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
-              {[
-                { icon: <MapPin size={15} />, label: 'Location', value: 'Jaffna, Sri Lanka' },
-                { icon: <Mail size={15} />, label: 'Email', value: 'selvanayagamabilasha@gmail.com', link: 'mailto:selvanayagamabilasha@gmail.com' },
-                { icon: <GraduationCap size={15} />, label: 'Degree', value: 'B.Sc. (Hons) Software Engineering' },
-                { icon: <GraduationCap size={15} />, label: 'University', value: 'Cardiff Metropolitan University (ICBT Campus Jaffna)' },
-                { label: '🌐', value: 'Tamil · English · Sinhala', plainLabel: 'Languages' },
-                { label: '💼', value: 'Open to Junior Software Engineering Opportunities', plainLabel: 'Status', green: true },
-              ].map((row, i) => (
-                <div key={i} style={{
-                  display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                  padding: '0.7rem 0', borderBottom: '1px solid var(--border)',
-                  fontSize: '0.85rem',
-                }}>
-                  <span style={{ color: 'var(--sub)', display: 'flex', alignItems: 'center', gap: 6 }}>
-                    {row.icon || row.label} {row.plainLabel || row.label}
+              <p>
+                I am a Software Engineering graduate from Cardiff
+                Metropolitan University, UK, through ICBT Campus, Jaffna.
+                I am interested in developing software applications,
+                particularly in Python development and Artificial
+                Intelligence.
+              </p>
+
+              <p>
+                Through my personal projects, I have worked with Python,
+                machine learning, AI agent development and full-stack web
+                technologies. My projects include a Tamil-language
+                agriculture AI assistant, a student score prediction
+                application, an e-commerce platform and a fitness
+                management system.
+              </p>
+
+              <p>
+                I am currently strengthening my Python programming,
+                database and software development foundations while
+                exploring AI technologies and their practical
+                applications.
+              </p>
+
+              <p>
+                My long-term goal is to become an AI Engineer by first
+                building strong software development and Python
+                programming skills.
+              </p>
+
+              <div className="about-interest-list">
+                {interests.map((interest) => (
+                  <span key={interest} className="about-interest">
+                    {interest}
                   </span>
-                  {row.link ? (
-                    <a href={row.link} style={{ color: 'var(--violet2)', fontWeight: 500, textAlign: 'right' }}>{row.value}</a>
-                  ) : (
-                    <span style={{ color: row.green ? 'var(--green)' : 'var(--text)', fontWeight: 500, textAlign: 'right' }}>{row.value}</span>
-                  )}
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
           </Reveal>
+
+          {/* QUICK INFORMATION */}
+          <Reveal delay={150}>
+            <div className="about-info-card">
+              <h2>
+                <Code2 size={20} />
+                Quick Information
+              </h2>
+
+              <div className="about-info-list">
+                {quickInfo.map((item) => (
+                  <div className="about-info-row" key={item.label}>
+                    <div className="about-info-label">
+                      {item.icon}
+                      <span>{item.label}</span>
+                    </div>
+
+                    {item.link ? (
+                      <a href={item.link}>{item.value}</a>
+                    ) : (
+                      <span className="about-info-value">
+                        {item.value}
+                      </span>
+                    )}
+                  </div>
+                ))}
+
+                <div className="about-info-row">
+                  <div className="about-info-label">
+                    <span>🌐</span>
+                    <span>Languages</span>
+                  </div>
+                  <span className="about-info-value">
+                    Tamil · English · Sinhala
+                  </span>
+                </div>
+
+                <div className="about-info-row">
+                  <div className="about-info-label">
+                    <Briefcase size={17} />
+                    <span>Availability</span>
+                  </div>
+                  <span className="about-availability">
+                    Open to Entry-Level Opportunities
+                  </span>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+
         </div>
       </section>
 
       {/* EDUCATION */}
-      <section style={{ padding: '4rem 1.5rem' }}>
-        <div style={{ maxWidth: 900, margin: '0 auto' }}>
+      <section className="about-education-section">
+        <div className="about-container">
+
           <Reveal>
-          <div>
-            <p style={{
-              fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.1em',
-              textTransform: 'uppercase', color: 'var(--violet)', marginBottom: '0.5rem',
-            }}>Background</p>
-            <h2 style={{
-              fontFamily: 'Space Grotesk, sans-serif', fontSize: 'clamp(1.4rem, 3vw, 1.9rem)',
-              fontWeight: 700, marginBottom: '2rem', letterSpacing: '-0.02em',
-            }}>
-              Education & <span style={{ color: 'var(--violet2)' }}>Certifications</span>
-            </h2>
-          </div>
+            <div className="about-section-heading">
+              <p className="about-eyebrow">ACADEMIC BACKGROUND</p>
+              <h2>
+                Education & <span>Qualifications</span>
+              </h2>
+            </div>
           </Reveal>
 
-          {/* Education list */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2.5rem' }}>
-            {[
-              { deg: 'B.Sc. (Hons) Software Engineering [Second Class Division One]', school: 'ICBT Campus, Jaffna · Cardiff Metropolitan University', year: ' Awarded: May 2026' },
-              { deg: 'Higher Diploma in Computing & Software Engineering', school: 'ICBT Campus, Jaffna · Merit Pass', year: 'Mar 2023 – Nov 2024' },
-            ].map((e, i) => (
-              <Reveal key={i} delay={i * 100}>
-                <div className="hover-card" style={{
-                  background: 'var(--card)', border: '1px solid var(--border)',
-                  borderRadius: 12, padding: '1.15rem 1.35rem',
-                  display: 'flex', gap: '1rem', alignItems: 'flex-start',
-                }}>
-                  <div style={{
-                    width: 10, height: 10, borderRadius: '50%',
-                    background: 'var(--violet)', flexShrink: 0, marginTop: 5,
-                  }} />
-                  <div>
-                    <div style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: '0.9rem', fontWeight: 700 }}>{e.deg}</div>
-                    <div style={{ fontSize: '0.82rem', color: 'var(--violet2)', marginTop: 3 }}>{e.school}</div>
-                    <div style={{ fontSize: '0.75rem', color: 'var(--sub)', marginTop: 3 }}>{e.year}</div>
+          <div className="about-education-list">
+            {education.map((item, index) => (
+              <Reveal key={item.degree} delay={index * 100}>
+                <article className="about-education-card">
+                  <div className="about-education-icon">
+                    <GraduationCap size={23} />
                   </div>
-                </div>
+
+                  <div className="about-education-content">
+                    <h3>{item.degree}</h3>
+
+                    <p className="about-education-institution">
+                      {item.institution}
+                    </p>
+
+                    <p className="about-education-campus">
+                      {item.campus}
+                    </p>
+
+                    <div className="about-education-meta">
+                      <span>{item.result}</span>
+                      <span>{item.period}</span>
+                    </div>
+                  </div>
+                </article>
               </Reveal>
             ))}
           </div>
 
-          {/* Certifications */}
+          {/* CERTIFICATIONS */}
           <Reveal>
-          <h3 style={{
-            fontFamily: 'Space Grotesk, sans-serif', fontSize: '1rem',
-            fontWeight: 700, marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: 8,
-          }}>
-            <Award size={18} color="var(--violet2)" /> Certifications & Workshops
-          </h3>
+            <div className="about-certification-heading">
+              <Award size={21} />
+              <h2>Certifications & Workshops</h2>
+            </div>
           </Reveal>
-          <div style={{
-            display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '0.65rem',
-          }}>
-            {[
-              { name: 'AI Agents Intensive Vibe Coding Course', org: 'Kaggle & Google · Jun 2026' },
-              { name: 'Advanced Python Programming', org: 'i-Tech Academy · May 2025' },
-              { name: 'Python Certificate', org: 'GUVI (HCL & Google) · May 2025' },
-              { name: 'Diploma in IT & Artificial Intelligence', org: 'CASED Institute · 2025' },
-              { name: 'Workshop on NLP & Computer Vision', org: 'ICBT Campus Jaffna · May 2026' },
-              { name: 'IoT & Smart Solutions Workshop', org: 'ICBT Campus Jaffna · Aug 2026' },
-              { name: 'AI Master Class', org: 'LP Campus . Jul 2024'}
-            ].map((c, i) => (
-              <Reveal key={i} delay={i * 80}>
-                <div className="hover-card" style={{
-                  background: 'var(--card)', border: '1px solid var(--border)',
-                  borderRadius: 10, padding: '0.85rem 1rem',
-                }}>
-                  <div style={{ fontSize: '0.82rem', color: 'var(--text)', fontWeight: 500 }}>{c.name}</div>
-                  <div style={{ fontSize: '0.72rem', color: 'var(--sub)', marginTop: 3 }}>{c.org}</div>
-                </div>
+
+          <div className="about-certification-grid">
+            {certifications.map((item, index) => (
+              <Reveal key={item.name} delay={index * 60}>
+                <article className="about-certification-card">
+                  <div className="about-certification-icon">
+                    <Award size={18} />
+                  </div>
+
+                  <div>
+                    <h3>{item.name}</h3>
+                    <p>{item.org}</p>
+                  </div>
+                </article>
               </Reveal>
             ))}
           </div>
+
         </div>
       </section>
 

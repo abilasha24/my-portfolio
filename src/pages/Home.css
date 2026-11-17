@@ -1,0 +1,604 @@
+
+.home-page {
+  overflow: hidden;
+  background: var(--bg);
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 125px 35px 75px;
+}
+
+.hero-background-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  top: 10%;
+  left: 15%;
+  background: radial-gradient(
+    circle,
+    rgba(139, 92, 246, 0.12),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.hero-layout {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.35fr 0.85fr;
+  align-items: center;
+  gap: 65px;
+}
+
+/* =========================
+   PROFILE PHOTO - LEFT
+========================= */
+
+.hero-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.hero-content {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.hero-photo-wrapper {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  padding: 7px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    #a78bfa,
+    #6d28d9,
+    #4c1d95
+  );
+  box-shadow: 0 15px 55px rgba(139, 92, 246, 0.25);
+}
+
+.hero-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 30%;
+  border: 3px solid var(--bg);
+}
+
+.photo-status {
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  right: 17px;
+  bottom: 17px;
+  background: #22c55e;
+  border: 3px solid var(--bg);
+  border-radius: 50%;
+}
+
+.profile-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 20px;
+}
+
+.profile-caption span:first-child {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.profile-caption span:last-child {
+  color: var(--sub);
+  font-size: 0.82rem;
+}
+
+/* =========================
+   INTRODUCTION - RIGHT
+========================= */
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 620px;
+  margin: 0;
+  text-align: left;
+}
+
+.availability-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 14px;
+  margin-bottom: 25px;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 30px;
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--violet2);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.availability-dot {
+  width: 8px;
+  height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.6);
+}
+
+.hero-greeting {
+  margin-bottom: 8px;
+  color: var(--sub);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.hero-name {
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2.4rem, 4.5vw, 3.7rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.045em;
+}
+
+.hero-name span {
+  color: var(--violet2);
+}
+
+.hero-role {
+  margin: 18px 0 8px;
+  color: var(--text);
+   font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.hero-career {
+  margin: 0 0 20px;
+  color: var(--violet2);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.hero-career span {
+  color: var(--sub);
+}
+
+.hero-description {
+  max-width: 590px;
+  margin: 0 0 18px;
+  color: var(--sub);
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.hero-location {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 25px;
+  color: var(--sub);
+  font-size: 0.92rem;
+}
+
+.hero-location svg {
+  color: var(--violet2);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 46px;
+  padding: 0 20px;
+  border-radius: 8px;
+  font-size: 0.94rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.primary-button {
+  color: white;
+  background: var(--violet);
+  border: 1px solid var(--violet);
+}
+
+.primary-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+}
+
+.secondary-button {
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--border);
+}
+
+.secondary-button:hover {
+  color: var(--violet2);
+  border-color: var(--violet);
+  transform: translateY(-3px);
+}
+
+/* =========================
+   SOCIAL LINKS
+========================= */
+
+.hero-socials {
+  display: flex;
+  gap: 15px;
+  margin-top: 24px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 39px;
+  height: 39px;
+  color: var(--sub);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.social-link:hover {
+  color: var(--violet2);
+  border-color: var(--violet);
+  transform: translateY(-3px);
+}
+
+/* =========================
+   STATISTICS
+========================= */
+
+.hero-stats {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 35px;
+  margin-top: 32px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stat-item strong {
+  color: var(--violet2);
+  font-family: 'Space Grotesk', sans-serif;
+   font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.stat-item span {
+  color: var(--sub);
+  font-size: 0.78rem;
+}
+
+/* =========================
+   SKILLS SECTION
+========================= */
+
+.skills-section {
+  padding: 85px 24px;
+  background: var(--card);
+  border-top: 1px solid var(--border);
+}
+
+.section-heading {
+  max-width: 650px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 13px;
+  color: var(--violet2);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.section-heading h2 {
+  margin: 0 0 13px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+.section-heading h2 span {
+  color: var(--violet2);
+}
+
+.section-heading p {
+  color: var(--sub);
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.skill-card {
+  height: 100%;
+  padding: 23px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.skill-card:hover {
+  border-color: var(--violet);
+  transform: translateY(-3px);
+}
+
+.skill-card h3 {
+  margin: 0 0 19px;
+  color: var(--violet2);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 11px;
+  color: var(--sub);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.skill-item:hover {
+  color: var(--text);
+  border-color: var(--violet);
+}
+
+.skill-logo {
+  width: 19px;
+  height: 19px;
+  object-fit: contain;
+}
+
+.skill-fallback-icon {
+  color: var(--violet2);
+  flex-shrink: 0;
+}
+
+.all-skills-link {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+.all-skills-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--violet2);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.all-skills-link a:hover {
+  gap: 13px;
+}
+
+/* =========================
+   TABLET RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+  .hero-layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    max-width: 650px;
+  }
+
+  .hero-profile {
+    order: 1;
+  }
+
+  .hero-content {
+    order: 2;
+    text-align: center;
+    margin: auto;
+  }
+
+  .hero-photo-wrapper {
+    width: 230px;
+    height: 275px;
+  }
+
+  .hero-location,
+  .hero-buttons,
+  .hero-socials,
+  .hero-stats {
+    justify-content: center;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+  .hero-section {
+    min-height: auto;
+    padding: 110px 20px 65px;
+  }
+
+  .skills-section {
+    padding: 65px 18px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 110px 20px 60px;
+  }
+
+  .hero-photo-wrapper {
+    width: 195px;
+    height: 235px;
+  }
+
+  .hero-name {
+    font-size: 2.3rem;
+  }
+
+  .hero-stats {
+    gap: 18px;
+  }
+
+  .stat-item strong {
+    font-size: 1.1rem;
+  }
+
+  .stat-item span {
+    font-size: 0.65rem;
+  }
+
+  .availability-badge {
+    font-size: 0.68rem;
+    padding: 7px 11px;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-stats {
+    gap: 13px;
+  }
+
+  .stat-item span {
+    font-size: 0.62rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .hero-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-profile {
+    order: 1;
+  }
+
+  .hero-content {
+    order: 2;
+    text-align: center;
+    margin: auto;
+  }
+
+  .hero-photo-wrapper {
+    width: 250px;
+    height: 250px;
+  }
+
+  .hero-location,
+  .hero-buttons,
+  .hero-socials,
+  .hero-stats {
+    justify-content: center;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-photo-wrapper {
+    width: 210px;
+    height: 210px;
+  }
+
+  .hero-name {
+    font-size: 2.2rem;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+  }
+}

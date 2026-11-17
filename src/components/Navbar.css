@@ -1,0 +1,148 @@
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(13, 13, 20, 0.65);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.navbar-scrolled {
+  background: rgba(13, 13, 20, 0.95);
+  border-bottom-color: var(--border);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-container {
+  max-width: 1150px;
+  height: 76px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  text-decoration: none;
+  color: var(--violet2);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.logo-highlight {
+  color: var(--text);
+}
+
+
+/* ===== Desktop Navigation ===== */
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+}
+
+.navbar-link,
+.mobile-link {
+  color: var(--sub);
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 0.01em;
+  transition: color 0.25s ease;
+}
+
+.navbar-link:hover,
+.navbar-link.active,
+.mobile-link:hover,
+.mobile-link.active {
+  color: var(--violet2);
+}
+
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-cv,
+.mobile-cv {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid var(--violet);
+  border-radius: 8px;
+  color: var(--violet2);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.navbar-cv:hover,
+.mobile-cv:hover {
+  background: var(--violet);
+  color: white;
+}
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  padding: 6px;
+}
+
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 1.5rem 2rem;
+  background: var(--card);
+  border-top: 1px solid var(--border);
+}
+
+.mobile-cv {
+  width: fit-content;
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    height: 68px;
+    padding: 0 1.25rem;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-cv {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .navbar-container {
+    padding: 0 1rem;
+  }
+}
