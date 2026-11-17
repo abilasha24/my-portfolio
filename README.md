@@ -1,253 +1,165 @@
 # 💼 Abilasha Selvanayakam — Personal Portfolio
 
-A modern, responsive personal portfolio website built with **React, TypeScript, Tailwind CSS, and Vite**, showcasing my projects, technical skills, education, and experience as a **Junior Software Engineer / Full-Stack & AI Developer**.
+A modern, responsive personal portfolio website built with **React, TypeScript, Tailwind CSS, and Vite**. It showcases my software development projects, technical skills, education, certifications, and career interests.
 
-🌐 **Live Portfolio:** https://my-portfolio-xi-seven-46.vercel.app/
-
----
+🌐 **Live Portfolio:** [View My Portfolio](https://my-portfolio-webapp-ashy.vercel.app/)
 
 ## 👩‍💻 About Me
 
-I am a Software Engineering graduate focused on building modern web applications and AI-integrated software solutions.
+I am a **Software Engineering graduate** interested in Python development, Artificial Intelligence, Machine Learning, and full-stack web development.
 
-My interests include:
+I enjoy building software applications and exploring how AI can be integrated into practical solutions.
 
-* Full-Stack Web Development
-* AI-integrated Applications
-* Machine Learning
-* REST API Development
-* Modern Frontend Development
-* Software Engineering
+**Career Interests:**
+- Python Development
+- Artificial Intelligence
+- Machine Learning
+- Full-Stack Web Development
+- REST API Development
 
-I am currently **open to Junior Software Engineering opportunities**.
-
----
+I am currently seeking entry-level software development and Python-related opportunities.
 
 ## 🚀 Portfolio Pages
 
-The portfolio contains four main pages:
-
-* **Home** — Introduction, skills, and featured work
-* **About** — Education, certifications, and professional background
-* **Projects** — Selected full-stack, AI, and machine-learning projects
-* **Contact** — Contact form and professional contact information
-
----
+- **Home** — Introduction, technical skills, and professional overview.
+- **About** — Education, certifications, and background.
+- **Projects** — Selected software development and AI projects.
+- **Contact** — Contact information and enquiry form.
 
 ## 🛠️ Technologies
 
-### Frontend
+**Frontend**
+- React
+- TypeScript
+- Tailwind CSS
+- HTML5
+- CSS3
+- Vite
 
-* React
-* TypeScript
-* Tailwind CSS
-* HTML
-* CSS
-* Vite
+**Backend & APIs**
+- Node.js
+- Express.js
+- PHP
+- REST APIs
 
-### Backend & APIs
+**Databases**
+- PostgreSQL
+- MySQL
+- Prisma ORM
 
-* Node.js
-* Express.js
-* PHP
-* REST APIs
+**AI & Machine Learning**
+- Python
+- Google ADK
+- Groq API
+- GPT-OSS 120B
+- Scikit-learn
+- Streamlit
 
-### Databases
-
-* PostgreSQL
-* MySQL
-* Prisma ORM
-
-### AI / Machine Learning
-
-* Python
-* Scikit-learn
-* Google ADK
-* Groq API
-* LLaMA
-* Streamlit
-
-### Tools & Platforms
-
-* Git
-* GitHub
-* VS Code
-* Postman
-* Vercel
-
----
+**Tools & Platforms**
+- Git
+- GitHub
+- VS Code
+- Postman
+- Vercel
 
 ## 📌 Featured Projects
 
 ### 🌾 Tamil Farmer Assistant
 
-An AI-powered assistant designed to help farmers access useful agricultural information through a Tamil-friendly conversational interface.
+An AI-powered agricultural assistant designed to provide useful farming information through a Tamil conversational interface.
 
-**Technologies:** Python, Google ADK, Groq API, LLaMA 3.3, OpenWeatherMap, Streamlit
-
----
+**Technologies:** Python, Google ADK, Groq API, GPT-OSS 120B, OpenWeatherMap API, Streamlit.
 
 ### 🛒 AuraShop — Full-Stack E-Commerce Platform
 
-A full-stack e-commerce application featuring product browsing, search, filtering, shopping cart functionality, authentication, and RESTful backend APIs.
+A full-stack e-commerce application featuring product browsing, search, filtering, shopping cart functionality, authentication, and backend APIs.
 
-**Technologies:** Next.js 14, TypeScript, Node.js, Express.js, PostgreSQL, Prisma ORM, JWT, Tailwind CSS
+**Technologies:** Next.js, TypeScript, Node.js, Express.js, PostgreSQL, Prisma ORM, JWT, Tailwind CSS.
 
----
+### 🏋️ SmartFit — Fitness Management System
 
-### 🏋️ SmartFit System
+A web-based fitness management system designed to manage fitness-related information and user workflows.
 
-A fitness management system developed to manage fitness-related information and user workflows.
+**Technologies:** PHP, MySQL, JavaScript, HTML5, CSS3.
 
-**Technologies:** PHP, MySQL, JavaScript, HTML, CSS
+### 📊 Student Score Prediction
 
----
+A machine learning web application that predicts student scores using regression models.
 
-### 📊 Student Score Predictor
-
-A machine-learning web application that predicts student scores using trained regression models.
-
-**Technologies:** Python, Scikit-learn, Streamlit, Random Forest, Gradient Boosting
-
----
+**Technologies:** Python, Scikit-learn, Streamlit, Random Forest, Gradient Boosting.
 
 ### 💻 Personal Portfolio Website
 
-This portfolio website itself, designed to present my projects, technical skills, education, and career profile.
+A responsive personal website built to showcase my projects, technical skills, education, and professional profile.
 
-**Technologies:** React, TypeScript, Tailwind CSS, Vite
-
----
+**Technologies:** React, TypeScript, Tailwind CSS, Vite.
 
 ## 🎓 Education
 
-### B.Sc. (Hons) Software Engineering
+**B.Sc. (Hons) Software Engineering**  
+Cardiff Metropolitan University, UK  
+ICBT Campus, Jaffna  
+Second Class, Division One | 2026
 
-**Cardiff Metropolitan University / ICBT Campus Jaffna**
-
-Second Class Division One
-2025 – 2026
-
-### Higher Diploma in Computing & Software Engineering
-
-**ICBT Campus Jaffna**
-
-Merit Pass
-2023 – 2024
-
----
+**Higher Diploma in Computing & Software Engineering**  
+Cardiff Metropolitan University / ICBT Campus, Jaffna  
+Merit Pass | November 2024
 
 ## 📜 Certifications & Learning
 
-* Gemini Certified University Student
-* Google AI Agents Intensive Course
-* Kaggle Intro to Programming
-* AI Agents Course
-* NLP & Computer Vision Workshop
-* IoT & Smart Solutions Workshop
-
----
-
-## 📂 Project Structure
-
-```text
-my-portfolio-webapp/
-│
-├── public/
-│   ├── Abilasha_Resume.pdf
-│   └── og-image.png
-│
-├── src/
-│   ├── components/
-│   ├── context/
-│   ├── data/
-│   ├── hooks/
-│   ├── pages/
-│   │   ├── Home.tsx
-│   │   ├── About.tsx
-│   │   ├── Projects.tsx
-│   │   └── Contact.tsx
-│   │
-│   ├── App.tsx
-│   ├── index.css
-│   └── main.tsx
-│
-├── .gitignore
-├── package.json
-├── tailwind.config.js
-├── vite.config.ts
-└── README.md
-```
-
----
+- Gemini Certified University Student
+- Kaggle & Google AI Agents Intensive Course
+- Python Programming — GUVI
+- Advanced Python Programming — i-Tech Academy
+- NLP & Computer Vision Workshop
+- IoT & Smart Solutions Workshop
 
 ## ⚙️ Run Locally
 
-Clone the repository:
+**1. Clone the repository**
 
 ```bash
 git clone https://github.com/abilasha24/my-portfolio.git
 ```
 
-Navigate into the project:
+**2. Navigate into the project**
 
 ```bash
 cd my-portfolio
 ```
 
-Install dependencies:
+**3. Install dependencies**
 
 ```bash
 npm install
 ```
 
-Start the development server:
+**4. Start the development server**
 
 ```bash
 npm run dev
 ```
 
-Build for production:
+**5. Build for production**
 
 ```bash
 npm run build
 ```
 
----
-
 ## 🌐 Deployment
 
-The portfolio is deployed using **Vercel**.
+This portfolio is deployed using Vercel.
 
-Live website:
-
-https://my-portfolio-xi-seven-46.vercel.app/
-
----
+**Live Website:** [Visit My Portfolio](https://my-portfolio-webapp-ashy.vercel.app/)
 
 ## 📫 Connect With Me
 
-**GitHub:**
-https://github.com/abilasha24
-
-**LinkedIn:**
-https://www.linkedin.com/
-
-**Portfolio:**
-https://my-portfolio-xi-seven-46.vercel.app/
-
----
-
-## 📄 Resume
-
-My latest resume is available directly from the portfolio website.
-
----
+- **GitHub:** https://github.com/abilasha24
+- **LinkedIn:** https://linkedin.com/in/abilashaselvanayakam2k06
+- **Portfolio:** https://my-portfolio-webapp-ashy.vercel.app/
 
 ## 👩‍💻 Author
 
-**Abilasha Selvanayakam**
+**Abilasha Selvanayakam**  
+Software Engineering Graduate | Aspiring Python Developer & AI Engineer
 
-Junior Software Engineer · Full-Stack & AI Developer
-
-Open to Junior Software Engineering opportunities.
