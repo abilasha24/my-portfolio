@@ -1,5 +1,5 @@
 
-import { Github, ExternalLink } from 'lucide-react';
+import { Github, ExternalLink, Bot } from 'lucide-react';
 
 import {
   FarmerIcon,
@@ -66,6 +66,20 @@ const projects = [
     icon: MLIcon,
   },
   {
+    name: 'Rule-Based AI Chatbot',
+    category: 'Artificial Intelligence · DecodeLabs Internship',
+    date: 'September – October 2026',
+    desc: 'A Python-based rule-driven chatbot developed as part of my Artificial Intelligence internship at DecodeLabs. It uses conditional logic and predefined responses to handle user messages such as greetings, help requests and basic AI-related questions.',
+    tech: [
+      'Python',
+      'Conditional Statements',
+      'Loops',
+      'Rule-Based Logic',
+    ],
+    github: 'https://github.com/abilasha24/DecodeLabs-AI-Rule-Based-Chatbot',
+    icon: Bot,
+  },
+  {
     name: 'SmartFit System',
     category: 'Web Development · Personal Project',
     date: 'December 2025 – March 2026',
@@ -111,9 +125,10 @@ export default function Projects() {
             </h1>
 
             <p>
-              A collection of personal projects demonstrating my work
-              in Python development, Artificial Intelligence,
-              Machine Learning and full-stack web development.
+              A collection of personal and internship projects
+              demonstrating my work in Python development,
+              Artificial Intelligence, Machine Learning and
+              full-stack web development.
             </p>
           </div>
         </Reveal>
