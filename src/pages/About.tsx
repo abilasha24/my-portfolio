@@ -10,6 +10,7 @@ import {
 
 import Reveal from '../components/Reveal';
 import './About.css';
+import { useState } from 'react';
 
 const quickInfo = [
   {
@@ -70,32 +71,44 @@ const education = [
 
 const certifications = [
   {
+    name: 'Artificial Intelligence Internship Completion',
+    org: 'DecodeLabs · October 2026',
+    image: '/certificates/decodelabs.jpg',
+  },
+  {
     name: 'AI Agents Intensive Vibe Coding Course',
     org: 'Kaggle & Google · June 2026',
+    image: '/certificates/kaggle-google.jpg',
   },
   {
     name: 'Advanced Python Programming',
     org: 'i-Tech Academy · May 2025',
+    image: '/certificates/advanced-python.jpg',
   },
   {
     name: 'Python Certificate',
     org: 'GUVI (HCL & Google) · May 2025',
+    image: '/certificates/guvi-python.jpg',
   },
   {
     name: 'Diploma in IT & Artificial Intelligence',
     org: 'CASED Institute · 2025',
+    image: '/certificates/cased-ai.jpg',
   },
   {
     name: 'Workshop on NLP & Computer Vision',
     org: 'ICBT Campus, Jaffna · May 2026',
+    image: '/certificates/nlp-computer-vision.jpg',
   },
   {
     name: 'IoT & Smart Solutions Workshop',
     org: 'ICBT Campus, Jaffna · August 2026',
+    image: '/certificates/iot-workshop.jpg',
   },
   {
     name: 'AI Master Class',
     org: 'LP Campus · July 2024',
+    image: '/certificates/ai-master-class.jpg',
   },
 ];
 
@@ -109,6 +122,9 @@ const interests = [
 ];
 
 export default function About() {
+  const [selectedCertificate, setSelectedCertificate] =
+    useState<(typeof certifications)[number] | null>(null);
+
   return (
     <main className="about-page">
 
@@ -347,25 +363,60 @@ export default function About() {
           </Reveal>
 
           <div className="about-certification-grid">
-            {certifications.map((item, index) => (
-              <Reveal key={item.name} delay={index * 60}>
-                <article className="about-certification-card">
-                  <div className="about-certification-icon">
-                    <Award size={18} />
-                  </div>
+  {certifications.map((item, index) => (
+    <Reveal key={item.name} delay={index * 60}>
+      <button
+        type="button"
+        className="about-certification-card"
+        onClick={() => setSelectedCertificate(item)}
+        aria-label={`View ${item.name} certificate`}
+      >
+        <div className="about-certification-icon">
+          <Award size={18} />
+        </div>
 
-                  <div>
-                    <h3>{item.name}</h3>
-                    <p>{item.org}</p>
-                  </div>
-                </article>
-              </Reveal>
-            ))}
-          </div>
+        <div>
+          <h3>{item.name}</h3>
+          <p>{item.org}</p>
+          <span className="certificate-view-text">
+            View Certificate ↗
+          </span>
+        </div>
+      </button>
+    </Reveal>
+  ))}
+</div>
 
+{selectedCertificate && (
+  <div
+    className="certificate-modal"
+    onClick={() => setSelectedCertificate(null)}
+  >
+    <div
+      className="certificate-modal-content"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <button
+        type="button"
+        className="certificate-close"
+        onClick={() => setSelectedCertificate(null)}
+        aria-label="Close certificate"
+      >
+        ×
+      </button>
+
+      <h2>{selectedCertificate.name}</h2>
+
+      <img
+        src={selectedCertificate.image}
+        alt={selectedCertificate.name}
+      />
+
+    </div>
+  </div>
+)}
         </div>
       </section>
-
     </main>
   );
 }
