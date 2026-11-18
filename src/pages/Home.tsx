@@ -119,8 +119,6 @@ export default function Home() {
 
         <p className="hero-career">
           Aspiring Python Developer
-          <span> | </span>
-          AI Engineer
         </p>
 
         <p className="hero-description">
